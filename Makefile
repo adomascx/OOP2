@@ -3,8 +3,6 @@ CXXFLAGS = -fdiagnostics-color=always -g -std=c++17 -O3
 VECTOR_LIB_DIR = konteineriai/vector
 DEQUE_LIB_DIR = konteineriai/deque
 LIST_LIB_DIR = konteineriai/list
-STRAT = 3
-KONT = D
 
 all: build_d build_l build_v test_d test_l test_v
 
@@ -32,8 +30,3 @@ build_v: $(VECTOR_LIB_DIR)/OOP1.cpp $(wildcard $(VECTOR_LIB_DIR)/bibliotekos/*.c
 
 test_v: $(VECTOR_LIB_DIR)/testavimas.cpp $(wildcard $(VECTOR_LIB_DIR)/bibliotekos/*.cpp)
 	$(CXX) $(CXXFLAGS) -o build/testavimas_V.exe $(VECTOR_LIB_DIR)/testavimas.cpp $(wildcard $(VECTOR_LIB_DIR)/bibliotekos/*.cpp)
-
-runtest: 
-	.\build\testavimas_$(KONT).exe 100 $(STRAT) && \
-	.\build\testavimas_$(KONT).exe 1000 $(STRAT) && \
-	.\build\testavimas_$(KONT).exe 10000 $(STRAT)

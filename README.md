@@ -1,4 +1,4 @@
-# OOP1
+# OOP2
 
 Šis projektas yra C++ programa, skirta studentų pažymių įvedimui ir galutinio rezultato skaičiavimui. Nuo paskutinio README atnaujinimo įdiegta papildoma funkcionalumo refinavimo versija – interaktyvus meniu, papildomi duomenų apdorojimo testai bei patobulintas laiko matavimas.
 
@@ -167,7 +167,6 @@ Programą galite įdiegti ir paleisti dviem būdais:
 | **Bendras programos veikimo laikas** | 0.01        | 0.18         | 1.6           | 16.96          |
 
 #### Pastebėjimai:
- - Programos veikimo sparta ženkliai nukrenta naudojant kompiliavimo vėliavėlę `-O3`
  - Be to, pakeitimai programai naudojant daugiau STL funkcijų rodo *~10%* greitesnį veikimą
  - Su optimizacijomis, 'vector' implementacija tampa sparčiausia, o 'list' lėčiausia
  - Dauguma programos veikimo etapų veikia su *O(N)* sudėtingumu, išskyrus rūšiavimo operacijas
