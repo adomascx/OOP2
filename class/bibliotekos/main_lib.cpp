@@ -6,7 +6,7 @@ time_point<high_resolution_clock> pradzios_laikas; // laiko matavimo funkcijos p
 string vardas[] = {"Adomas", "Julius", "Mantas", "Lukas", "Dominykas", "Tomas", "Jonas", "Paulius", "Dovydas", "Karolis", "Rokas", "Simonas", "Martynas", "Arnas", "Justas", "Vilius"};
 string pavarde[] = {"Kazlauskas", "Petrauskas", "Jankauskas", "Stankevicius", "Butkus", "Paulauskas", "Urbonas", "Vasiliauskas", "Lukosevicius", "Simkus", "Brazaitis", "Kavaliauskas", "Mikalauskas", "Navickas", "Rimkus", "Zukauskas"};
 
-vector<stud_struct> grupe;
+vector<studentas> grupe;
 
 // laiko skaiciavimo pradzios funkcija
 void timer_prad()

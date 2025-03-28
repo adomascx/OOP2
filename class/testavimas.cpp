@@ -54,7 +54,8 @@ int main(int argc, char *argv[])
     }
 
     gen_file = "teksto_failai/studentai" + to_string(dydis) + ".txt";
-    cout << endl << "filesize: " << dydis;
+    cout << endl
+         << "filesize: " << dydis;
 
     ifstream fd(gen_file);
     failo_ivedimas(fd);
@@ -62,11 +63,11 @@ int main(int argc, char *argv[])
 
     char choice_mediana = 'y';
 
-    for (auto &studentas : grupe)
+    for (auto &stud : grupe)
     {
-        studentas.galutinisVid = vidurkis_gal(studentas);
+        stud.galutinisVid = vidurkis_gal(stud);
         if (choice_mediana == 'y')
-            studentas.galutinisMed = mediana_gal(studentas);
+            stud.galutinisMed = mediana_gal(stud);
     }
 
     cout << "Studentai skirstomi pagal pazymius..." << endl;

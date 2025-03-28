@@ -55,7 +55,7 @@ int main()
          << "5 - baigti darba" << endl;
     cin >> choice;
 
-    stud_struct temp; // laikinas įvedimo masyvas
+    studentas temp; // laikinas įvedimo masyvas
 
     try
     {

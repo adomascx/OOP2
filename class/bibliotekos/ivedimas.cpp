@@ -1,6 +1,6 @@
 #include "ivedimas.h"
 
-void stud_ivedimas(stud_struct &temp)
+void stud_ivedimas(studentas &temp)
 {
     cout << "Iveskite studento varda: ";
     cin >> temp.var;
@@ -13,7 +13,7 @@ void stud_ivedimas(stud_struct &temp)
         throw runtime_error("Netinkamai ivesta pavarde. Bandykite vel");
 }
 
-void paz_ivedimas(stud_struct &temp)
+void paz_ivedimas(studentas &temp)
 {
     while (true)
     {
@@ -40,7 +40,7 @@ void paz_ivedimas(stud_struct &temp)
         throw runtime_error("Netinkamas egzamino balas. Pasirinkite skaiciu nuo 1 iki 10");
 }
 
-void gen_paz(stud_struct &temp)
+void gen_paz(studentas &temp)
 {
     for (int i = 0; i < 32; i++)
     {
@@ -51,7 +51,7 @@ void gen_paz(stud_struct &temp)
 
 void failo_ivedimas(istream &in)
 {
-    stud_struct temp;
+    studentas temp;
     int pazymys;
 
     string line, word;

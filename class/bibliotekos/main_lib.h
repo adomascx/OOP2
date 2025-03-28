@@ -10,8 +10,8 @@ using std::vector;
 using std::cin;
 using std::cout;
 using std::endl;
-using std::ostream;
 using std::istream;
+using std::ostream;
 
 #include <iomanip>
 using std::fixed;
@@ -20,9 +20,9 @@ using std::setprecision;
 using std::setw;
 
 #include <algorithm>
+using std::find_if;
 using std::nth_element;
 using std::sort;
-using std::find_if;
 
 #include <string>
 using std::string;
@@ -49,8 +49,9 @@ using std::make_move_iterator;
 
 static const char output_file[] = "teksto_failai/rezultatai.txt"; // failo, į kurį išvedami rezultatų duomenys, direktorija/pavadinimas
 
-struct stud_struct
+class studentas
 {
+public:
     string var, pav;
     vector<int> paz;
     int egz;
@@ -58,7 +59,7 @@ struct stud_struct
     double galutinisMed;
 };
 
-extern vector<stud_struct> grupe;
+extern vector<studentas> grupe;
 
 extern bool ar_skaiciuoti_laika;
 extern time_point<high_resolution_clock> pradzios_laikas;

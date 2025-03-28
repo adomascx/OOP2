@@ -1,6 +1,6 @@
 #include "apdorojimas.h"
 
-double vidurkis(const stud_struct &student)
+double vidurkis(const studentas &student)
 {
     double vid = 0;
     for (auto score : student.paz)
@@ -10,7 +10,7 @@ double vidurkis(const stud_struct &student)
     return vid / student.paz.size();
 }
 
-int mediana(const stud_struct &student)
+int mediana(const studentas &student)
 {
     vector<int> temp = student.paz;
 
@@ -33,12 +33,12 @@ int mediana(const stud_struct &student)
     }
 }
 
-double vidurkis_gal(const stud_struct &student)
+double vidurkis_gal(const studentas &student)
 {
     return (0.4 * vidurkis(student)) + (0.6 * student.egz);
 }
 
-double mediana_gal(const stud_struct &student)
+double mediana_gal(const studentas &student)
 {
     return (0.4 * mediana(student)) + (0.6 * student.egz);
 }

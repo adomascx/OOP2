@@ -1,6 +1,6 @@
 #include "isvedimas.h"
 
-void rez_isvedimas(ostream &out, char choice_mediana, const vector<stud_struct> &grupe)
+void rez_isvedimas(ostream &out, char choice_mediana, const vector<studentas> &grupe)
 {
     out << setw(15) << left << "Vardas"
         << setw(15) << "Pavarde"
@@ -53,9 +53,9 @@ void failo_generavimas(string gen_file, int paz_sk, int dydis)
     timer_pab("failo generavimas");
 }
 
-void stud_isskirstymas_3(const vector<stud_struct> &grupe)
+void stud_isskirstymas_3(const vector<studentas> &grupe)
 {
-    vector<stud_struct> temp = grupe;
+    vector<studentas> temp = grupe;
 
     timer_prad();
     sort(temp.begin(), temp.end(), [](const auto &a, const auto &b)
@@ -68,7 +68,7 @@ void stud_isskirstymas_3(const vector<stud_struct> &grupe)
                      { return grupe.galutinisVid < 5; });
 
     // perkeliami duomenys is 'temp' i 'kartotojai'
-    vector<stud_struct> kartotojai(make_move_iterator(i), make_move_iterator(temp.end()));
+    vector<studentas> kartotojai(make_move_iterator(i), make_move_iterator(temp.end()));
     temp.erase(i, temp.end());
     timer_pab("Isdeliojimas i 2 vektorius");
 
@@ -91,9 +91,9 @@ void stud_isskirstymas_3(const vector<stud_struct> &grupe)
     // timer_pab("Isvedimas i faila");
 }
 
-void stud_isskirstymas_2(const vector<stud_struct> &grupe)
+void stud_isskirstymas_2(const vector<studentas> &grupe)
 {
-    vector<stud_struct> temp = grupe;
+    vector<studentas> temp = grupe;
 
     // visas masyvas rusiuojamas is karto, taip sumazinant velesniu palyginimu sk.
     timer_prad();
@@ -109,7 +109,7 @@ void stud_isskirstymas_2(const vector<stud_struct> &grupe)
     auto i = find_if(temp.begin(), temp.end(), [](const auto &grupe)
                      { return grupe.galutinisVid < 5; });
 
-    vector<stud_struct> kartotojai;
+    vector<studentas> kartotojai;
 
     // perkeliami duomenys is 'temp' i 'kartotojai'
     kartotojai.insert(kartotojai.end(),
@@ -139,11 +139,11 @@ void stud_isskirstymas_2(const vector<stud_struct> &grupe)
     // timer_pab("Isvedimas i faila");
 }
 
-void stud_isskirstymas_1(const vector<stud_struct> &grupe)
+void stud_isskirstymas_1(const vector<studentas> &grupe)
 {
-    vector<stud_struct> temp = grupe;
-    vector<stud_struct> islaikytojai;
-    vector<stud_struct> kartotojai;
+    vector<studentas> temp = grupe;
+    vector<studentas> islaikytojai;
+    vector<studentas> kartotojai;
 
     // visas masyvas rusiuojamas is karto, taip sumazinant velesniu palyginimu sk.
     timer_prad();
