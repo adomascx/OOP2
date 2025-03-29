@@ -1,5 +1,5 @@
 #pragma once
-#include "main_lib.h"
+#include "studentas.h"
 
 double vidurkis(const studentas &student);
 int mediana(const studentas &student);

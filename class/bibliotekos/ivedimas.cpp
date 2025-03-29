@@ -49,7 +49,7 @@ void gen_paz(studentas &temp)
     temp.egz = rand() % 10;
 }
 
-void failo_ivedimas(istream &in)
+void failo_ivedimas(vector<studentas> &grupe, istream &in)
 {
     studentas temp;
     int pazymys;
