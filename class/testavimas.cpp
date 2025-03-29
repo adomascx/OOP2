@@ -64,9 +64,9 @@ int main(int argc, char *argv[])
 
     for (auto &stud : grupe)
     {
-        stud.galutinisVid = vidurkis_gal(stud);
+        stud.calc_gal_vidurkis();
         if (choice_mediana == 'y')
-            stud.galutinisMed = mediana_gal(stud);
+            stud.calc_gal_mediana();
     }
 
     cout << "Studentai skirstomi pagal pazymius..." << endl;

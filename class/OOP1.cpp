@@ -55,8 +55,6 @@ int main()
          << "5 - baigti darba" << endl;
     cin >> choice;
 
-    studentas temp; // laikinas įvedimo masyvas
-
     try
     {
         switch (choice)
@@ -66,8 +64,10 @@ int main()
         {
             while (true)
             {
-                stud_ivedimas(temp);
-                paz_ivedimas(temp);
+                studentas temp; // laikinas įvedimo masyvas
+
+                temp.rank_vardo_ivedimas();
+                temp.rank_paz_ivedimas();
 
                 grupe.push_back(temp);
 
@@ -89,14 +89,15 @@ int main()
         {
             while (true)
             {
+                studentas temp; // laikinas įvedimo masyvas
+
                 // vardu/pavardziu rankinis ivedimas
-                stud_ivedimas(temp);
+                temp.rank_vardo_ivedimas();
 
                 // pazymiu generavimas
-                gen_paz(temp);
+                temp.gen_paz();
 
                 grupe.push_back(temp);
-                temp.paz.clear();
 
                 // ar kartoti ivedimo/generavimo cikla?
                 cout << "Ar norite toliau ivesti studentus? (y/n): " << endl;
@@ -122,14 +123,14 @@ int main()
             for (; i > 0; i--)
             {
                 // vardu/pavardziu generavimas
-                temp.var = vardas[rand() % 16];
-                temp.pav = pavarde[rand() % 16];
+                string random_vardas = vardai[rand() % 16];
+                string random_pavarde = pavardes[rand() % 16];
 
+                studentas temp(random_vardas, random_pavarde, vector<int>(), 0);
                 // pazymiu generavimas
-                gen_paz(temp);
+                temp.gen_paz();
 
                 grupe.push_back(temp);
-                temp.paz.clear();
             }
             break;
         }
@@ -199,9 +200,9 @@ int main()
 
     for (auto &student : grupe)
     {
-        student.galutinisVid = vidurkis_gal(student);
+        student.calc_gal_vidurkis();
         if (choice_mediana == 'y')
-            student.galutinisMed = mediana_gal(student);
+            student.calc_gal_mediana();
     }
 
     // diskriminavimas (vektoriaus padalinimas i 2 dalis)
@@ -233,24 +234,24 @@ int main()
         {
         case '1':
             sort(grupe.begin(), grupe.end(), [](const auto &a, const auto &b)
-                 { return a.var < b.var; });
+                 { return a.vardas() < b.vardas(); });
             break;
 
         case '2':
             sort(grupe.begin(), grupe.end(), [](const auto &a, const auto &b)
-                 { return a.pav < b.pav; });
+                 { return a.pavarde() < b.pavarde(); });
             break;
 
         case '3':
             sort(grupe.begin(), grupe.end(), [](const auto &a, const auto &b)
-                 { return a.galutinisVid > b.galutinisVid; });
+                 { return a.galutinis_vidurkis() > b.galutinis_vidurkis(); });
             break;
 
         case '4':
             if (choice_mediana == 'y')
             {
                 sort(grupe.begin(), grupe.end(), [](const auto &a, const auto &b)
-                     { return a.galutinisMed > b.galutinisMed; });
+                     { return a.galutinis_mediana() > b.galutinis_mediana(); });
                 break;
             }
             else

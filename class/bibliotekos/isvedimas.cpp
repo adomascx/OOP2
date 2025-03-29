@@ -12,12 +12,12 @@ void rez_isvedimas(ostream &out, char choice_mediana, const vector<studentas> &g
 
     for (const auto &i : grupe)
     {
-        out << setw(15) << left << i.var
-            << setw(15) << i.pav
+        out << setw(15) << left << i.vardas()
+            << setw(15) << i.pavarde()
             << fixed << setprecision(3) << setw(20)
-            << i.galutinisVid << " ";
+            << i.galutinis_vidurkis() << " ";
         if (choice_mediana == 'y')
-            out << i.galutinisMed << " ";
+            out << i.galutinis_mediana() << " ";
         out << endl;
     }
 }
