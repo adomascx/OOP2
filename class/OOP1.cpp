@@ -9,6 +9,8 @@ int main()
     srand(69420);
     char choice; // vartotojo pasirinkimas
 
+    vector<studentas> grupe;
+
     // Failo generavimo pasirinkimas
     cout << "Ar norite sugeneruoti studentu faila? (y/n): " << endl;
     try
@@ -153,7 +155,7 @@ int main()
             }
 
             // viso failo ivedimas i atminti
-            failo_ivedimas(fd);
+            failo_ivedimas(grupe, fd);
 
             fd.close();
 

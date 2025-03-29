@@ -49,18 +49,6 @@ using std::make_move_iterator;
 
 static const char output_file[] = "teksto_failai/rezultatai.txt"; // failo, į kurį išvedami rezultatų duomenys, direktorija/pavadinimas
 
-class studentas
-{
-public:
-    string var, pav;
-    vector<int> paz;
-    int egz;
-    double galutinisVid;
-    double galutinisMed;
-};
-
-extern vector<studentas> grupe;
-
 extern bool ar_skaiciuoti_laika;
 extern time_point<high_resolution_clock> pradzios_laikas;
 

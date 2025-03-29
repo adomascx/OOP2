@@ -33,7 +33,7 @@ test_v: $(VECTOR_LIB_DIR)/testavimas.cpp $(wildcard $(VECTOR_LIB_DIR)/biblioteko
 	$(CXX) $(CXXFLAGS) -o build/testavimas_V.exe $(VECTOR_LIB_DIR)/testavimas.cpp $(wildcard $(VECTOR_LIB_DIR)/bibliotekos/*.cpp)
 
 build_c: $(CLASS_LIB_DIR)/OOP1.cpp $(wildcard $(CLASS_LIB_DIR)/bibliotekos/*.cpp)
-	$(CXX) $(CXXFLAGS) -o build/OOP1_V.exe $(CLASS_LIB_DIR)/OOP1.cpp $(wildcard $(CLASS_LIB_DIR)/bibliotekos/*.cpp)
+	$(CXX) $(CXXFLAGS) -o build/OOP1_C.exe $(CLASS_LIB_DIR)/OOP1.cpp $(wildcard $(CLASS_LIB_DIR)/bibliotekos/*.cpp)
 
 test_c: $(CLASS_LIB_DIR)/testavimas.cpp $(wildcard $(CLASS_LIB_DIR)/bibliotekos/*.cpp)
-	$(CXX) $(CXXFLAGS) -o build/testavimas_V.exe $(CLASS_LIB_DIR)/testavimas.cpp $(wildcard $(CLASS_LIB_DIR)/bibliotekos/*.cpp)
+	$(CXX) $(CXXFLAGS) -o build/testavimas_C.exe $(CLASS_LIB_DIR)/testavimas.cpp $(wildcard $(CLASS_LIB_DIR)/bibliotekos/*.cpp)
