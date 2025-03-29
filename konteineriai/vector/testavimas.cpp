@@ -54,7 +54,8 @@ int main(int argc, char *argv[])
     }
 
     gen_file = "teksto_failai/studentai" + to_string(dydis) + ".txt";
-    cout << endl << "filesize: " << dydis;
+    cout << endl
+         << "filesize: " << dydis;
 
     ifstream fd(gen_file);
     failo_ivedimas(fd);

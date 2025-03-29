@@ -1,6 +1,4 @@
 #include "bibliotekos/studentas.h"
-#include "bibliotekos/apdorojimas.h"
-#include "bibliotekos/ivedimas.h"
 #include "bibliotekos/isvedimas.h"
 
 int main(int argc, char *argv[])

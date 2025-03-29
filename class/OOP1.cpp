@@ -1,6 +1,4 @@
 #include "bibliotekos/main_lib.h"
-#include "bibliotekos/apdorojimas.h"
-#include "bibliotekos/ivedimas.h"
 #include "bibliotekos/isvedimas.h"
 
 int main()

@@ -52,8 +52,8 @@ static const char output_file[] = "teksto_failai/rezultatai.txt"; // failo, į k
 extern bool ar_skaiciuoti_laika;
 extern time_point<high_resolution_clock> pradzios_laikas;
 
-extern string vardas[];
-extern string pavarde[];
+extern string vardai[];
+extern string pavardes[];
 
 void timer_prad();
 void timer_pab(string operacija);
