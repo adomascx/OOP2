@@ -7,14 +7,13 @@ int main(int argc, char *argv[])
 {
     srand(69420);
     ar_skaiciuoti_laika = true;
-
     int dydis;
     char strategija;
     string gen_file;
 
     /*
     Argumentai:
-    1. Failo dydis (10-1000)
+    1. Failo dydis
     2. Strategijos pasirinkimas (1-3)
     3. Failo generavimo pasirinkimas (1/0)
     */
@@ -22,22 +21,22 @@ int main(int argc, char *argv[])
     switch (argc)
     {
     case 2:
-        dydis = atoi(argv[1]) * 1000;
+        dydis = atoi(argv[1]);
         cout << "Iveskite strategija: ";
         cin >> strategija;
         break;
 
     case 3:
-        dydis = atoi(argv[1]) * 1000;
+        dydis = atoi(argv[1]);
         strategija = argv[2][0];
         break;
 
     case 4:
 
-        dydis = atoi(argv[1]) * 1000;
+        dydis = atoi(argv[1]);
         strategija = argv[2][0];
 
-        if (std::string(argv[3]) == "1")
+        if (string(argv[3]) == "1")
         {
             gen_file = "teksto_failai/studentai" + to_string(dydis) + ".txt";
             failo_generavimas(gen_file, 10, dydis);

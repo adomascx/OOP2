@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -fdiagnostics-color=always -g -std=c++17 -O1
+CXXFLAGS = -fdiagnostics-color=always -g -std=c++17 -O3
 VECTOR_LIB_DIR = konteineriai/vector
 DEQUE_LIB_DIR = konteineriai/deque
 LIST_LIB_DIR = konteineriai/list

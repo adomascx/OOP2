@@ -12,15 +12,14 @@ private:
     double galutinisMed;
 
 public:
-    studentas() : egz(0) {}                                                                        // default konstruktorius
-    studentas(const string &vardas, const string &pavarde, const vector<int> &paz, int egzaminas); // pilnas konstruktorius
+    studentas() : egz(0) {};                                                                              // default konstruktorius
+    studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas); // pilnas konstruktorius
     studentas(istream &is, int nd_count);
     ~studentas();
 
     // getteriai
     inline string vardas() const { return var; }
     inline string pavarde() const { return pav; }
-    inline int pazymys(int n) const { return paz[n]; }
     inline double galutinis_vidurkis() const { return galutinisVid; }
     inline double galutinis_mediana() const { return galutinisMed; }
 
@@ -33,7 +32,7 @@ public:
     void gen_paz();
 };
 
-void failo_ivedimas(vector<studentas> &grupe, istream &in);
+void failo_ivedimas(vector<studentas> &grupe, istream &is);
 void stud_isskirstymas_1(const vector<studentas> &grupe);
 void stud_isskirstymas_2(const vector<studentas> &grupe);
 void stud_isskirstymas_3(const vector<studentas> &grupe);

@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
     /*
     Argumentai:
-    1. Failo dydis (10-1000)
+    1. Failo dydis
     2. Strategijos pasirinkimas (1-3)
     3. Failo generavimo pasirinkimas (1/0)
     */
@@ -22,22 +22,22 @@ int main(int argc, char *argv[])
     switch (argc)
     {
     case 2:
-        dydis = atoi(argv[1]) * 1000;
+        dydis = atoi(argv[1]);
         cout << "Iveskite strategija: ";
         cin >> strategija;
         break;
 
     case 3:
-        dydis = atoi(argv[1]) * 1000;
+        dydis = atoi(argv[1]);
         strategija = argv[2][0];
         break;
 
     case 4:
 
-        dydis = atoi(argv[1]) * 1000;
+        dydis = atoi(argv[1]);
         strategija = argv[2][0];
 
-        if (std::string(argv[3]) == "1")
+        if (string(argv[3]) == "1")
         {
             gen_file = "teksto_failai/studentai" + to_string(dydis) + ".txt";
             failo_generavimas(gen_file, 10, dydis);
@@ -54,7 +54,8 @@ int main(int argc, char *argv[])
     }
 
     gen_file = "teksto_failai/studentai" + to_string(dydis) + ".txt";
-    cout << endl << "filesize: " << dydis;
+    cout << endl
+         << "filesize: " << dydis;
 
     ifstream fd(gen_file);
     failo_ivedimas(fd);
@@ -64,9 +65,9 @@ int main(int argc, char *argv[])
 
     for (auto &studentas : grupe)
     {
-        stud.galutinisVid = vidurkis_gal(studentas);
+        studentas.galutinisVid = vidurkis_gal(studentas);
         if (choice_mediana == 'y')
-            stud.galutinisMed = mediana_gal(studentas);
+            studentas.galutinisMed = mediana_gal(studentas);
     }
 
     cout << "Studentai skirstomi pagal pazymius..." << endl;

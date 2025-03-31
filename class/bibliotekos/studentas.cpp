@@ -1,7 +1,7 @@
 #include "studentas.h"
 #include "isvedimas.h"
 
-// --- Klases metodai ---
+// ----- Klases metodai -----
 
 // destruktorius
 studentas::~studentas()
@@ -15,7 +15,7 @@ studentas::~studentas()
 }
 
 // konstruktoriai
-studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, int egzaminas) : var(vardas), pav(pavarde), paz(paz), egz(egzaminas) {}
+studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas) : var(vardas), pav(pavarde), paz(paz), egz(egzaminas) {}
 
 studentas::studentas(istream &is, int nd_count)
 {
@@ -62,7 +62,6 @@ void studentas::calc_gal_mediana()
 }
 
 // setteriai
-
 istream &studentas::paz_ivedimas(istream &is, int nd_count)
 {
     int pazymys;
@@ -125,12 +124,12 @@ void studentas::gen_paz()
     egz = rand() % 10;
 }
 
-// --- Ne metodai, bet darbas su klase ---
-void failo_ivedimas(vector<studentas> &grupe, istream &in)
+// ----- Ne metodai, bet darbas su klase -----
+void failo_ivedimas(vector<studentas> &grupe, istream &is)
 {
     string line, word;
 
-    getline(in, line);
+    getline(is, line);
     istringstream antraste(line);
     int nd_count{};
     while (antraste >> word)
@@ -143,7 +142,7 @@ void failo_ivedimas(vector<studentas> &grupe, istream &in)
     cout << endl
          << "Ivedami duomenys..." << endl;
 
-    while (getline(in, line))
+    while (getline(is, line))
     {
         istringstream iss(line);
         studentas temp(iss, nd_count);
