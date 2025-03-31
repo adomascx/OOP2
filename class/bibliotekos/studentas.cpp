@@ -231,8 +231,9 @@ void stud_isskirstymas_3(const vector<studentas> &grupe)
                      { return s.galutinis_vidurkis() < 5; });
     vector<studentas> kartotojai(make_move_iterator(i), make_move_iterator(temp.end()));
     temp.erase(i, temp.end());
-    timer_pab("Isdeliojimas i 2 vektorius");
+    timer_pab("Studentu isskirstymas");
 
+    timer_prad();
     ofstream fr_k("teksto_failai/kartotojai.txt");
     if (!fr_k)
         throw runtime_error("Nepavyko atidaryti kartotoju failo");
@@ -244,4 +245,5 @@ void stud_isskirstymas_3(const vector<studentas> &grupe)
         throw runtime_error("Nepavyko atidaryti islaikytoju failo");
     rez_isvedimas(fr_i, 'n', temp);
     fr_i.close();
+    timer_pab("Isvedimas i faila");
 }

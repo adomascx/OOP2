@@ -11,64 +11,20 @@
 - **v1.0:** Papildyta programa, lyginant trijų konteinerių (vector, deque, list) realizacijos spartą
 
 ## Įdiegimo instrukcijos
-Programą galite įdiegti ir paleisti dviem būdais:
-- **Per VSCode užduočių paleidimą:**  
-  Naudokite pateiktą `.vscode/tasks.json` konfiguraciją. Atidarykite komandų paletę (`Ctrl+Shift+P`) ir paleiskite "Tasks: Run Build Task".
-- **Per Makefile:**  
-  Naudokite įtrauktą Makefile. Terminale vykdykite:   
-  • `make build_v` – sukompiliuoja programą su vector realizacija (OOP1_V.exe)  
-  • `make build_l` – sukompiliuoja programą su list realizacija (OOP1_L.exe)  
-  • `make build_d` – sukompiliuoja programą su deque realizacija (OOP1_D.exe)  
-  • `make test_v` – sukompiliuoja laiko matavimo programą su vector realizacija (testavimas_V.exe)  
-  • `make test_l` – sukompiliuoja laiko matavimo programą su list realizacija (testavimas_L.exe)  
-  • `make test_d` – sukompiliuoja laiko matavimo programą su deque realizacija (testavimas_D.exe)  
-  • `make clean` – ištrina sugeneruotus vykdomuosius failus.
-
-### VSCode projektinio failo `tasks.json` konfigūracija
-
-```jsonc
-// filepath: .vscode/tasks.json
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "type": "cppbuild",
-            "label": "C/C++: Surinkti visus šaltinio failus",
-            "command": "C:\\path\\to\\g++.exe",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${workspaceFolder}\\OOP1.cpp",
-                "${workspaceFolder}\\bibliotekos\\apdorojimas.cpp",
-                "${workspaceFolder}\\bibliotekos\\ivedimas.cpp",
-                "${workspaceFolder}\\bibliotekos\\isvedimas.cpp",
-                "${workspaceFolder}\\bibliotekos\\main_lib.cpp",
-                "-o",
-                "${workspaceFolder}\\build\\OOP1.exe"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
-    ]
-}
-```
+Naudokite įtrauktą Makefile. Terminale vykdykite:
+ - `make build` – sukompiliuoja programas (4 realizacijomis)
+ - `make test` – sukompiliuoja laiko matavimo programas (4 realizacijomis)
+ - `make all` – sukompiliuoja visas esamas programos versijas
+ - `make clean` – ištrina sugeneruotus vykdomuosius failus.
 
 ## Programos spartos analizė
 
-### Testai matuoja:
+#### Testai matuoja:
 - Duomenų nuskaitymą iš failo,
 - Konteinerio rūšiavimą (naudojant std::sort),
 - Studentų grupavimą į dvi kategorijas.
 
-### Sistemų Parametrai
+#### Sistemos Parametrai:
 - CPU: AMD Ryzen 5 5600X (6 Cores @ 4.6GHz)
 - Memory: Corsair Vengeance 16GB (DDR4 3200MHz CL16)
 - Storage: Western Digital SN550 (1TB M.2 NVMe)
@@ -171,16 +127,54 @@ Programą galite įdiegti ir paleisti dviem būdais:
  - Su optimizacijomis, 'vector' implementacija tampa sparčiausia, o 'list' lėčiausia
  - Dauguma programos veikimo etapų veikia su *O(N)* sudėtingumu, išskyrus rūšiavimo operacijas
 
-## Programos veikimo pavyzdžiai
+### Struct vs Class
 
-Programos eiga apima duomenų įvedimą, rezultato apskaičiavimą bei spartos analizės etapų išvedimą:
+#### Class:
+| Testai                               | 100000 įrašų | 1000000 įrašų |
+| ------------------------------------ | ------------ | ------------- |
+| Duomenu nuskaitymas                  | 0.15         | 1.49          |
+| Studentų rūšiavimas                  | 0.04         | 0.63          |
+| Sudentų išskirstymas                 | <0.01        | 0.05          |
+| Išvedimas į failą                    | 0.37         | 3.64          |
+| **Bendras programos veikimo laikas** | 0.56         | 5.81          |
 
-- **Pagrindinis meniu:**  
-  ![image](https://github.com/user-attachments/assets/59b5b9f6-e997-47e4-8fdf-32f85498f852)
+#### Struct (vector):
+| Testai                               | 100000 įrašų | 1000000 įrašų |
+| ------------------------------------ | ------------ | ------------- |
+| Duomenu nuskaitymas                  | 0.11         | 1.09          |
+| Studentų rūšiavimas                  | 0.01         | 0.14          |
+| Sudentų išskirstymas                 | <0.01        | 0.01          |
+| Išvedimas į failą                    | 0.38         | 3.73          |
+| **Bendras programos veikimo laikas** | 0.5          | 4.97          |
 
-- **Sugeneruotas studentų failas:**  
-  ![image](https://github.com/user-attachments/assets/62391314-923f-4ff8-94c8-9cb42682917f)
+#### Pastebėjimai:
+ - Struktūrų (struct) implementacija bendrai veikia greičiau, nei klasių (class) atitikmuo, ypač duomenų nuskaitymo ir rūšiavimo operacijose.
+ - Tačiau, klasių realizacijoje failo išvedimo procesas vykdomas šiek tiek greičiau.
 
-- **Programos spartos analizė:**
+### Vėliavėlės (flags):
 
-  ![image](https://github.com/user-attachments/assets/f359d320-045c-41b3-83af-74726a414b2d)
+#### Class:
+| Testai                               | Be flag | -O1      | -O2      | -O3      | -Os    |
+| ------------------------------------ | ------- | -------- | -------- | -------- | ------ |
+| Duomenu nuskaitymas                  | 2.16    | 1.45     | 1.47     | 1.42     | 1.49   |
+| Studentų rūšiavimas                  | 2.68    | 0.72     | 0.68     | 0.65     | 0.74   |
+| Sudentų išskirstymas                 | 0.08    | 0.05     | 0.05     | 0.05     | 0.06   |
+| Išvedimas į failą                    | 3.86    | 3.85     | 3.79     | 3.69     | 3.76   |
+| **Bendras programos veikimo laikas** | 8.78    | 6.07     | 5.99     | 5.81     | 6.05   |
+| '.exe' failo dydis                   | 858 KB  | 1,210 KB | 1,265 KB | 1,824 KB | 805 KB |
+
+#### Struct (vector):
+| Testai                               | Be flag | -O1      | -O2      | -O3      | -Os    |
+| ------------------------------------ | ------- | -------- | -------- | -------- | ------ |
+| Duomenu nuskaitymas                  | 1.32    | 1.11     | 1.1      | 1.1      | 1.13   |
+| Studentų rūšiavimas                  | 1.45    | 0.17     | 0.18     | 0.15     | 0.26   |
+| Sudentų išskirstymas                 | 0.03    | 0.01     | 0.01     | 0.01     | 0.01   |
+| Išvedimas į failą                    | 3.83    | 3.86     | 3.78     | 3.78     | 3.77   |
+| **Bendras programos veikimo laikas** | 6.63    | 5.15     | 5.07     | 5.04     | 5.17   |
+| '.exe' failo dydis                   | 986 KB  | 1,570 KB | 1,505 KB | 1,925 KB | 919 KB |
+
+#### Pastebėjimai:
+ - Naudojant -O1, pastebimas reikšmingas programos veikimo laiko sumažėjimas, nors failo dydis taip pat ženkliai padidėja
+ - -O2 optimizacijos naudojimas rodo mažus tiek spartos, tiek failo dydžio skirtumus
+ - -O3 failo dydis žymiai išauga, tačiau veikimo greitis išlieka beveik nepakitęs
+ - -Os efektyviausia iš visų nurodytų: sumažintas failo dydis (net geresnis už versiją be optimizacijos) ir panaši sparta kaip su -O1

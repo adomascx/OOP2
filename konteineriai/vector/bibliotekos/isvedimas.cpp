@@ -72,8 +72,8 @@ void stud_isskirstymas_3(const vector<stud_struct> &grupe)
     temp.erase(i, temp.end());
     timer_pab("Isdeliojimas i 2 vektorius");
 
-    // timer_prad();
     // 'kartotoju' isvedimas i faila
+    timer_prad();
     ofstream fr_k("teksto_failai/kartotojai.txt");
     if (!fr_k)
         throw runtime_error("Nepavyko atidaryti kartotoju failo");
@@ -88,7 +88,7 @@ void stud_isskirstymas_3(const vector<stud_struct> &grupe)
 
     rez_isvedimas(fr_i, 'n', temp);
     fr_i.close();
-    // timer_pab("Isvedimas i faila");
+    timer_pab("Isvedimas i faila");
 }
 
 void stud_isskirstymas_2(const vector<stud_struct> &grupe)

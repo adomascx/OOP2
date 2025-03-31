@@ -69,8 +69,6 @@ int main(int argc, char *argv[])
             studentas.galutinisMed = mediana_gal(studentas);
     }
 
-    cout << "Studentai skirstomi pagal pazymius..." << endl;
-
     switch (strategija)
     {
     case '1':

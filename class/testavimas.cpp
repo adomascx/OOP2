@@ -69,8 +69,6 @@ int main(int argc, char *argv[])
             stud.calc_gal_mediana();
     }
 
-    cout << "Studentai skirstomi pagal pazymius..." << endl;
-
     switch (strategija)
     {
     case '1':
