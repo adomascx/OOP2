@@ -22,44 +22,29 @@ studentas::studentas(istream &is, int nd_count)
     paz_ivedimas(is, nd_count);
 };
 
-// galutinio balo apskaiciavimas
-void studentas::calc_gal_vidurkis()
-{
-    double vid = 0;
-    for (auto score : paz)
-    {
-        vid += score;
-    }
-    double vidurkis = vid / paz.size();
+// copy konstruktorius
+studentas::studentas(const studentas &other)
+    : var(other.var),
+      pav(other.pav),
+      paz(other.paz),
+      egz(other.egz),
+      galutinisVid(other.galutinisVid),
+      galutinisMed(other.galutinisMed) {}
 
-    galutinisVid = (0.4 * vidurkis) + (0.6 * egz);
-}
+// move konstruktorius
+studentas::studentas(studentas &&other) noexcept
+    : var(std::move(other.var)),
+      pav(std::move(other.pav)),
+      paz(std::move(other.paz)),
+      egz(other.egz),
+      galutinisVid(other.galutinisVid),
+      galutinisMed(other.galutinisMed) {}
 
-void studentas::calc_gal_mediana()
-{
-    vector<int> temp = paz;
+// copy operatorius
 
-    int j = temp.size() / 2;
-    double mediana = 0;
 
-    if (temp.size() % 2 == 0)
-    {
-        nth_element(temp.begin(), temp.begin() + j, temp.end());
-        int mid1 = temp[j];
+// move operatorius
 
-        nth_element(temp.begin(), temp.begin() + j - 1, temp.end());
-        int mid2 = temp[j - 1];
-
-        mediana = (mid1 + mid2) / 2;
-    }
-    else
-    {
-        nth_element(temp.begin(), temp.begin() + j, temp.end());
-        mediana = temp[j];
-    }
-
-    galutinisMed = (0.4 * mediana) + (0.6 * egz);
-}
 
 // setteriai
 istream &studentas::paz_ivedimas(istream &is, int nd_count)
@@ -122,6 +107,45 @@ void studentas::gen_paz()
         paz.push_back(rand() % 10);
     }
     egz = rand() % 10;
+}
+
+// galutinio balo apskaiciavimas
+void studentas::calc_gal_vidurkis()
+{
+    double vid = 0;
+    for (auto score : paz)
+    {
+        vid += score;
+    }
+    double vidurkis = vid / paz.size();
+
+    galutinisVid = (0.4 * vidurkis) + (0.6 * egz);
+}
+
+void studentas::calc_gal_mediana()
+{
+    vector<int> temp = paz;
+
+    int j = temp.size() / 2;
+    double mediana = 0;
+
+    if (temp.size() % 2 == 0)
+    {
+        nth_element(temp.begin(), temp.begin() + j, temp.end());
+        int mid1 = temp[j];
+
+        nth_element(temp.begin(), temp.begin() + j - 1, temp.end());
+        int mid2 = temp[j - 1];
+
+        mediana = (mid1 + mid2) / 2;
+    }
+    else
+    {
+        nth_element(temp.begin(), temp.begin() + j, temp.end());
+        mediana = temp[j];
+    }
+
+    galutinisMed = (0.4 * mediana) + (0.6 * egz);
 }
 
 // ----- Ne metodai, bet darbas su klase -----

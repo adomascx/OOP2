@@ -12,9 +12,22 @@ private:
     double galutinisMed;
 
 public:
+    // konstruktoriai
     studentas() : egz(0) {};                                                                              // default konstruktorius
     studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas); // pilnas konstruktorius
     studentas(istream &is, int nd_count);
+
+    // copy konstruktorius
+    studentas(const studentas &other);
+
+    // move konstruktorius
+    studentas(studentas &&other);
+
+    // copy operatorius
+
+    // move operatorius
+
+    // destruktorius
     ~studentas();
 
     // getteriai
