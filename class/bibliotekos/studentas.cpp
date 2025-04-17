@@ -33,18 +33,44 @@ studentas::studentas(const studentas &other)
 
 // move konstruktorius
 studentas::studentas(studentas &&other) noexcept
-    : var(std::move(other.var)),
-      pav(std::move(other.pav)),
-      paz(std::move(other.paz)),
+    : var(move(other.var)),
+      pav(move(other.pav)),
+      paz(move(other.paz)),
       egz(other.egz),
       galutinisVid(other.galutinisVid),
       galutinisMed(other.galutinisMed) {}
 
 // copy operatorius
+studentas &studentas::operator=(const studentas &other)
+{
+    if (this == &other)
+        return *this;
 
+    var = other.var;
+    pav = other.pav;
+    paz = other.paz;
+    egz = other.egz;
+    galutinisVid = other.galutinisVid;
+    galutinisMed = other.galutinisMed;
+
+    return *this;
+}
 
 // move operatorius
+studentas &studentas::operator=(studentas &&other) noexcept
+{
+    if (this == &other)
+        return *this;
 
+    var = move(other.var);
+    pav = move(other.pav);
+    paz = move(other.paz);
+    egz = other.egz;
+    galutinisVid = other.galutinisVid;
+    galutinisMed = other.galutinisMed;
+
+    return *this;
+}
 
 // setteriai
 istream &studentas::paz_ivedimas(istream &is, int nd_count)

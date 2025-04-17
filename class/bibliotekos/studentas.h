@@ -21,11 +21,13 @@ public:
     studentas(const studentas &other);
 
     // move konstruktorius
-    studentas(studentas &&other);
+    studentas(studentas &&other) noexcept;
 
     // copy operatorius
+    studentas &operator=(const studentas &other);
 
     // move operatorius
+    studentas &operator=(studentas &&other) noexcept;
 
     // destruktorius
     ~studentas();
