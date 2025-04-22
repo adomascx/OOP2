@@ -1,18 +1,6 @@
 #include "bibliotekos/studentas.h"
 #include "bibliotekos/isvedimas.h"
 
-/*
-To-Do / Ka testuoti:
-- Konstruktoriai
-- Copy metodas
-- Move metodas
-- Copy operatorius
-- Move operatorius
-- Ivesties metodai
-- Isvesties metodai
-- Destruktorius
-*/
-
 int main(int argc, char *argv[])
 {
     // 1. Default konstruktoriaus testavimas
@@ -20,8 +8,8 @@ int main(int argc, char *argv[])
     cout << "Numatytojo konstruktoriaus testas sekmingas" << endl;
 
     // 2. Parametrinio konstruktoriaus testavimas
-    vector<int> sampleGrades{8, 9, 10};
-    studentas studParam("Jane", "Doe", sampleGrades, 10);
+    vector<int> sampleGrades{2, 9, 10};
+    studentas studParam("Jone", "Jonaityte", sampleGrades, 10);
     cout << "Parametrinio konstruktoriaus testas sekmingas: "
          << studParam.vardas() << " " << studParam.pavarde() << endl;
 
@@ -49,7 +37,7 @@ int main(int argc, char *argv[])
 
     // 7. Ivedimo metodu testavimas (naudojant stringstream)
     {
-        std::stringstream inputMock("John Smith 8 9 10 7");
+        std::stringstream inputMock("Jonas Jonaitis 2 9 10 7");
         studentas studInput;
         studInput.paz_ivedimas(inputMock, 3);
         cout << "Ivedimo metodu testas sekmingas: "
