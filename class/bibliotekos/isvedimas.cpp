@@ -1,24 +1,24 @@
 #include "isvedimas.h"
 
-void rez_isvedimas(ostream &out, char choice_mediana, const vector<studentas> &grupe)
+void rez_isvedimas(ostream &os, char choice_mediana, const vector<studentas> &grupe)
 {
-    out << setw(15) << left << "Vardas"
-        << setw(15) << "Pavarde"
-        << setw(18) << "Galutinis (Vid.)";
+    os << setw(15) << left << "Vardas"
+       << setw(15) << "Pavarde"
+       << setw(18) << "Galutinis (Vid.)";
     if (choice_mediana == 'y')
-        out << "/ " << setw(20) << "Galutinis (Med.)";
-    out << endl
-        << string(75, '-') << endl;
+        os << "/ " << setw(20) << "Galutinis (Med.)";
+    os << endl
+       << string(75, '-') << endl;
 
     for (const auto &i : grupe)
     {
-        out << setw(15) << left << i.vardas()
-            << setw(15) << i.pavarde()
-            << fixed << setprecision(3) << setw(20)
-            << i.galutinis_vidurkis() << " ";
+        os << setw(15) << left << i.vardas()
+           << setw(15) << i.pavarde()
+           << fixed << setprecision(3) << setw(20)
+           << i.galutinis_vidurkis() << " ";
         if (choice_mediana == 'y')
-            out << i.galutinis_mediana() << " ";
-        out << endl;
+            os << i.galutinis_mediana() << " ";
+        os << endl;
     }
 }
 

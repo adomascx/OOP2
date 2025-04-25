@@ -38,13 +38,19 @@ public:
     inline double galutinis_vidurkis() const { return galutinisVid; }
     inline double galutinis_mediana() const { return galutinisMed; }
 
-    void calc_gal_vidurkis();
-    void calc_gal_mediana();
-
+    // setteriai
     istream &paz_ivedimas(istream &is, int nd_count);
+
+    friend ostream &operator<<(ostream &os, const studentas &s);
+    friend istream &operator>>(istream &is, studentas &s);
+
     void rank_vardo_ivedimas();
     void rank_paz_ivedimas();
     void gen_paz();
+
+    // gaultinio balo apskaiciavimas
+    void calc_gal_vidurkis();
+    void calc_gal_mediana();
 };
 
 void failo_ivedimas(vector<studentas> &grupe, istream &is);

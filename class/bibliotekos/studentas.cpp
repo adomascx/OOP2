@@ -17,6 +17,7 @@ studentas::~studentas()
 // konstruktoriai
 studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas) : var(vardas), pav(pavarde), paz(paz), egz(egzaminas) {}
 
+// konstruktorius naudojant stream
 studentas::studentas(istream &is, int nd_count)
 {
     paz_ivedimas(is, nd_count);
@@ -73,18 +74,37 @@ studentas &studentas::operator=(studentas &&other) noexcept
 }
 
 // setteriai
+
+// pazymiu ivedimas
 istream &studentas::paz_ivedimas(istream &is, int nd_count)
 {
     int pazymys;
-    is >> var >> pav;
     for (int i = 0; i < nd_count; i++)
     {
         is >> pazymys;
         paz.push_back(pazymys);
     }
-    is >> egz;
     return is;
 };
+
+// vardu, pavardziu ir egz rezultatu ivedimas su '>>' operatorium
+istream &operator>>(istream &is, studentas &s)
+{
+    is >> s.var >> s.pav >> s.egz;
+    return is;
+}
+
+ostream &operator<<(ostream &os, const studentas &s)
+{
+    os << setw(15) << left << s.vardas()
+       << setw(15) << s.pavarde()
+       << fixed << setprecision(3) << setw(20)
+       << s.galutinis_vidurkis() << " ";
+    if (s.galutinis_mediana() >= 1 && s.galutinis_mediana() <= 10)
+        os << s.galutinis_mediana() << " ";
+    os << endl;
+    return os;
+}
 
 void studentas::rank_vardo_ivedimas()
 {

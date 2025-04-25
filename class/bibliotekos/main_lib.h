@@ -30,6 +30,7 @@ using std::to_string;
 
 #include <sstream>
 using std::istringstream;
+using std::stringstream;
 
 #include <fstream>
 using std::ifstream;
