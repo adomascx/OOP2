@@ -10,8 +10,8 @@
 - **v0.3:** Atliktas pilnas refactoringas, įdiegtas išimčių valdymas, kodas suskaidytas į atskirus .cpp ir .h failus.
 - **v0.4:** Pridėtas failų generavimo funkcionalumas, studentų rūšiavimas pagal galutinį balą, įdiegta laiko matavimo sistema.
 - **v1.0:** Papildyta programa, lyginant trijų konteinerių (vector, deque, list) realizacijos spartą
-- **v1.1:** foo
-- **v1.2:** bar
+- **v1.1:** Kodas migruotas į implementaciją su klasėmis, ištirtas programos veikimo laikas su skirtingomis optimizavimo vėliavėlėmis
+- **v1.2:** Implementuota "Rule of Five" principo realizacija, perdengti "<<" ir ">>" operatoriai, pradėta dokumentacija
 
 ## Įdiegimo instrukcijos
 
@@ -21,6 +21,29 @@ Naudokite įtrauktą Makefile. Terminale vykdykite:
 - `make test` – sukompiliuoja laiko matavimo programas (4 realizacijomis)
 - `make all` – sukompiliuoja visas esamas programos versijas
 - `make clean` – ištrina sugeneruotus vykdomuosius failus.
+
+## Dokumentacija
+
+Dokumentacija apie `studentas` klasės perdengtus (overloaded) metodus:
+
+- **Konstruktoriai:**
+  - `studentas(const std::string& vardas, const std::string& pavarde, const std::vector<int>& paz, const int& egzaminas)`  
+    Sukuria studentą su nurodytu vardu, pavarde, pažymių sąrašu ir egzamino balu.
+  - `studentas(std::istream& is, int nd_count)`  
+    Skaito studento duomenis iš srauto: vardą, pavardę, egzaminą ir `nd_count` pažymių.
+
+- **Įvesties/išvesties operatoriai:**
+  - `friend std::istream& operator>>(std::istream& is, studentas& s)`  
+    Įterpia į `s` vardą, pavardę ir egzamino balą iš srauto.
+  - `friend std::ostream& operator<<(std::ostream& os, const studentas& s)`  
+    Rašo į srautą `s` vardą, pavardę, galutinį vidurkį ir medianą.
+
+- **Rule of Five:**
+  - `studentas(const studentas& other)` (copy konstruktorius)
+  - `studentas(studentas&& other) noexcept` (move konstruktorius)
+  - `studentas& operator=(const studentas& other)` (copy priskyrimo operatorius)
+  - `studentas& operator=(studentas&& other) noexcept` (move priskyrimo operatorius)
+  - `~studentas()` (destruktorius)
 
 ## Programos spartos analizė
 
@@ -71,7 +94,7 @@ Naudokite įtrauktą Makefile. Terminale vykdykite:
 
 - Dėl duomenų dubliavimo dviejuose naujuose konteineriuose, programa naudoja labai daug atminties (pradeda naudoti swap'us)
 - Implementacija su 'list' veikia greičiausiai, po jos eina 'vector' bei 'deque' implementacijos.
-- Ilgiausiai užtruka išrūšiuoti studentus; List implementacija rūšiuoja efektyviausiai, todėl ir užtrunka mažiausiai laiko
+- Ilgiausiai užtrunka išrūšiuoti studentus; List implementacija rūšiuoja efektyviausiai, todėl ir užtrunka mažiausiai laiko
 
 ### 2 Strategija
 
