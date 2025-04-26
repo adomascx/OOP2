@@ -12,6 +12,7 @@
 - **v1.0:** Papildyta programa, lyginant trijų konteinerių (vector, deque, list) realizacijos spartą
 - **v1.1:** Kodas migruotas į implementaciją su klasėmis, ištirtas programos veikimo laikas su skirtingomis optimizavimo vėliavėlėmis
 - **v1.2:** Implementuota "Rule of Five" principo realizacija, perdengti "<<" ir ">>" operatoriai, pradėta dokumentacija
+- **v1.5:** Sukurta bazinė klasė "zmogus", pagal kurią kuriama derived klasė "studentas"
 
 ## Įdiegimo instrukcijos
 

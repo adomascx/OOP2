@@ -20,7 +20,7 @@ public:
     virtual void rank_paz_ivedimas() = 0;
 
     // destruktorius
-    virtual ~zmogus() = 0;
+    virtual ~zmogus() {};
 };
 
 class studentas : public zmogus

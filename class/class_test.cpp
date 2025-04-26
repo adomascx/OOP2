@@ -3,12 +3,15 @@
 
 int main(int argc, char *argv[])
 {
-     // -- Vieta base klases testams --
-
-
      // Default konstruktoriaus testavimas
      studentas studDefault;
      cout << "Numatytojo konstruktoriaus testas sekmingas" << endl;
+
+     // Bazines klases testavimas naudojant dynamic_cast
+     if (dynamic_cast<zmogus *>(&studDefault))
+          cout << "Bazines klases paveldejimo testas sekmingas" << endl;
+     else
+          cout << "Bazines klases paveldejimo testas NESEKMINGAS" << endl;
 
      // Parametrinio konstruktoriaus testavimas
      vector<int> sampleGrades{2, 9, 10};

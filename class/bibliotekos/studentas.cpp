@@ -14,7 +14,16 @@ studentas::~studentas()
     galutinisMed = 0;
 }
 
-// ## konstruktoriai  
+// ## konstruktoriai
+studentas::studentas()
+{
+    var = "";
+    pav = "";
+    egz = 0;
+    galutinisVid = 0;
+    galutinisMed = 0;
+};
+
 studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas) : zmogus(vardas, pavarde), paz(paz), egz(egzaminas) {}
 
 // konstruktorius naudojant stream
@@ -192,7 +201,7 @@ void studentas::calc_gal_mediana()
     galutinisMed = (0.4 * mediana) + (0.6 * egz);
 }
 
-// # Ne metodai, bet darbas su klase 
+// # Ne metodai, bet darbas su klase
 void failo_ivedimas(vector<studentas> &grupe, istream &is)
 {
     string line, word;
