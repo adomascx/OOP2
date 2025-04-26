@@ -220,72 +220,7 @@ void failo_ivedimas(vector<studentas> &grupe, istream &is)
     timer_pab("Failo ivedimas");
 }
 
-void stud_isskirstymas_1(const vector<studentas> &grupe)
-{
-    vector<studentas> temp = grupe;
-    vector<studentas> islaikytojai;
-    vector<studentas> kartotojai;
-
-    timer_prad();
-    sort(temp.begin(), temp.end(), [](const auto &a, const auto &b)
-         { return a.galutinis_vidurkis() > b.galutinis_vidurkis(); });
-    timer_pab("Studentu rusiavimas");
-
-    timer_prad();
-    for (auto i : temp)
-    {
-        if (i.galutinis_vidurkis() < 5)
-            kartotojai.push_back(i);
-        else
-            islaikytojai.push_back(i);
-    }
-    timer_pab("Isdeliojimas i 2 vektorius");
-
-    ofstream fr_k("teksto_failai/kartotojai.txt");
-    if (!fr_k)
-        throw runtime_error("Nepavyko atidaryti kartotoju failo");
-    rez_isvedimas(fr_k, 'n', kartotojai);
-    fr_k.close();
-
-    ofstream fr_i("teksto_failai/islaikytojai.txt");
-    if (!fr_i)
-        throw runtime_error("Nepavyko atidaryti islaikytoju failo");
-    rez_isvedimas(fr_i, 'n', islaikytojai);
-    fr_i.close();
-}
-
-void stud_isskirstymas_2(const vector<studentas> &grupe)
-{
-    vector<studentas> temp = grupe;
-
-    timer_prad();
-    sort(temp.begin(), temp.end(), [](const auto &a, const auto &b)
-         { return a.galutinis_vidurkis() > b.galutinis_vidurkis(); });
-    timer_pab("Studentu rusiavimas");
-
-    timer_prad();
-    auto i = find_if(temp.begin(), temp.end(), [](const auto &s)
-                     { return s.galutinis_vidurkis() < 5; });
-    vector<studentas> kartotojai;
-    kartotojai.insert(kartotojai.end(),
-                      make_move_iterator(i),
-                      make_move_iterator(temp.end()));
-    timer_pab("Isdeliojimas i 2 vektorius");
-
-    ofstream fr_k("teksto_failai/kartotojai.txt");
-    if (!fr_k)
-        throw runtime_error("Nepavyko atidaryti kartotoju failo");
-    rez_isvedimas(fr_k, false, kartotojai);
-    fr_k.close();
-
-    ofstream fr_i("teksto_failai/islaikytojai.txt");
-    if (!fr_i)
-        throw runtime_error("Nepavyko atidaryti islaikytoju failo");
-    rez_isvedimas(fr_i, false, temp);
-    fr_i.close();
-}
-
-void stud_isskirstymas_3(const vector<studentas> &grupe)
+void stud_isskirstymas(const vector<studentas> &grupe)
 {
     vector<studentas> temp = grupe;
 

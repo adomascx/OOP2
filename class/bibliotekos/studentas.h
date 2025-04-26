@@ -73,6 +73,4 @@ public:
 };
 
 void failo_ivedimas(vector<studentas> &grupe, istream &is);
-void stud_isskirstymas_1(const vector<studentas> &grupe);
-void stud_isskirstymas_2(const vector<studentas> &grupe);
-void stud_isskirstymas_3(const vector<studentas> &grupe);
+void stud_isskirstymas(const vector<studentas> &grupe);
