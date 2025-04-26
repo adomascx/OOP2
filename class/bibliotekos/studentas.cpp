@@ -1,7 +1,7 @@
 #include "studentas.h"
 #include "isvedimas.h"
 
-// ----- Klases metodai -----
+// # Klases metodai
 
 // destruktorius
 studentas::~studentas()
@@ -14,7 +14,7 @@ studentas::~studentas()
     galutinisMed = 0;
 }
 
-// konstruktoriai
+// ## konstruktoriai  
 studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas) : zmogus(vardas, pavarde), paz(paz), egz(egzaminas) {}
 
 // konstruktorius naudojant stream
@@ -71,7 +71,7 @@ studentas &studentas::operator=(studentas &&other) noexcept
     return *this;
 }
 
-// setteriai
+// ## setteriai
 
 // pazymiu ivedimas
 istream &studentas::paz_ivedimas(istream &is, int nd_count)
@@ -192,7 +192,7 @@ void studentas::calc_gal_mediana()
     galutinisMed = (0.4 * mediana) + (0.6 * egz);
 }
 
-// ----- Ne metodai, bet darbas su klase -----
+// # Ne metodai, bet darbas su klase 
 void failo_ivedimas(vector<studentas> &grupe, istream &is)
 {
     string line, word;

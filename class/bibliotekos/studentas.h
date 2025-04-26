@@ -16,10 +16,11 @@ public:
     virtual string vardas() const = 0;
     virtual string pavarde() const = 0;
 
-    virtual void spausdinimas(ostream &os) const = 0;
+    virtual void rank_vardo_ivedimas() = 0;
+    virtual void rank_paz_ivedimas() = 0;
 
     // destruktorius
-    virtual ~zmogus() {}
+    virtual ~zmogus() = 0;
 };
 
 class studentas : public zmogus
