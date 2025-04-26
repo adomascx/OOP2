@@ -15,7 +15,7 @@ studentas::~studentas()
 }
 
 // konstruktoriai
-studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas) : var(vardas), pav(pavarde), paz(paz), egz(egzaminas) {}
+studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas) : zmogus(vardas, pavarde), paz(paz), egz(egzaminas) {}
 
 // konstruktorius naudojant stream
 studentas::studentas(istream &is, int nd_count)
@@ -25,8 +25,7 @@ studentas::studentas(istream &is, int nd_count)
 
 // copy konstruktorius
 studentas::studentas(const studentas &other)
-    : var(other.var),
-      pav(other.pav),
+    : zmogus(other.var, other.pav),
       paz(other.paz),
       egz(other.egz),
       galutinisVid(other.galutinisVid),
@@ -34,8 +33,7 @@ studentas::studentas(const studentas &other)
 
 // move konstruktorius
 studentas::studentas(studentas &&other) noexcept
-    : var(move(other.var)),
-      pav(move(other.pav)),
+    : zmogus(move(other.var), move(other.pav)),
       paz(move(other.paz)),
       egz(other.egz),
       galutinisVid(other.galutinisVid),

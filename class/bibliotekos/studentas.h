@@ -2,19 +2,38 @@
 
 #include "main_lib.h"
 
-class studentas
+class zmogus
+{
+protected:
+    string var, pav;
+
+public:
+    // konstruktoriai
+    zmogus() = default;
+    zmogus(const string &vardas, const string &pavarde) : var(vardas), pav(pavarde) {}
+
+    // getteriai
+    virtual string vardas() const = 0;
+    virtual string pavarde() const = 0;
+
+    virtual void spausdinimas(ostream &os) const = 0;
+
+    // destruktorius
+    virtual ~zmogus() {}
+};
+
+class studentas : public zmogus
 {
 private:
-    string var, pav;
     vector<int> paz;
     int egz;
     double galutinisVid;
     double galutinisMed;
 
 public:
-    // konstruktoriai
-    studentas() : egz(0) {};                                                                              // default konstruktorius
-    studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas); // pilnas konstruktorius
+    // Konstruktoriai
+    studentas();
+    studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas);
     studentas(istream &is, int nd_count);
 
     // copy konstruktorius
@@ -33,10 +52,10 @@ public:
     ~studentas();
 
     // getteriai
-    inline string vardas() const { return var; }
-    inline string pavarde() const { return pav; }
-    inline double galutinis_vidurkis() const { return galutinisVid; }
-    inline double galutinis_mediana() const { return galutinisMed; }
+    string vardas() const { return var; }
+    string pavarde() const { return pav; }
+    double galutinis_vidurkis() const { return galutinisVid; }
+    double galutinis_mediana() const { return galutinisMed; }
 
     // setteriai
     istream &paz_ivedimas(istream &is, int nd_count);
