@@ -1,6 +1,6 @@
 # OOP2
 
-Šis projektas yra C++ programa, skirta studentų pažymių įvedimui ir galutinio rezultato skaičiavimui. Nuo paskutinio README atnaujinimo įdiegta papildoma funkcionalumo refinavimo versija – interaktyvus meniu, papildomi duomenų apdorojimo testai bei patobulintas laiko matavimas.
+Šis projektas yra C++ programa, skirta studentų pažymių įvedimui ir galutinio rezultato skaičiavimui.
 
 ## Ankstesnės versijos
 
@@ -13,13 +13,14 @@
 - **v1.1:** Kodas migruotas į implementaciją su klasėmis, ištirtas programos veikimo laikas su skirtingomis optimizavimo vėliavėlėmis
 - **v1.2:** Implementuota "Rule of Five" principo realizacija, perdengti "<<" ir ">>" operatoriai, pradėta dokumentacija
 - **v1.5:** Sukurta bazinė klasė "zmogus", pagal kurią kuriama derived klasė "studentas"
+- **v2.0:**
 
 ## Įdiegimo instrukcijos
 
 Naudokite įtrauktą Makefile. Terminale vykdykite:
 
-- `make build` – sukompiliuoja programas (4 realizacijomis)
-- `make test` – sukompiliuoja laiko matavimo programas (4 realizacijomis)
+- `make build` – sukompiliuoja programas
+- `make test` – sukompiliuoja laiko matavimo programas
 - `make all` – sukompiliuoja visas esamas programos versijas
 - `make clean` – ištrina sugeneruotus vykdomuosius failus.
 
