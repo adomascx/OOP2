@@ -24,29 +24,6 @@ Naudokite įtrauktą Makefile. Terminale vykdykite:
 - `make all` – sukompiliuoja visas esamas programos versijas
 - `make clean` – ištrina sugeneruotus vykdomuosius failus.
 
-## Dokumentacija
-
-Dokumentacija apie `studentas` klasės perdengtus (overloaded) metodus:
-
-- **Konstruktoriai:**
-  - `studentas(const std::string& vardas, const std::string& pavarde, const std::vector<int>& paz, const int& egzaminas)`  
-    Sukuria studentą su nurodytu vardu, pavarde, pažymių sąrašu ir egzamino balu.
-  - `studentas(std::istream& is, int nd_count)`  
-    Skaito studento duomenis iš srauto: vardą, pavardę, egzaminą ir `nd_count` pažymių.
-
-- **Įvesties/išvesties operatoriai:**
-  - `friend std::istream& operator>>(std::istream& is, studentas& s)`  
-    Įterpia į `s` vardą, pavardę ir egzamino balą iš srauto.
-  - `friend std::ostream& operator<<(std::ostream& os, const studentas& s)`  
-    Rašo į srautą `s` vardą, pavardę, galutinį vidurkį ir medianą.
-
-- **Rule of Five:**
-  - `studentas(const studentas& other)` (copy konstruktorius)
-  - `studentas(studentas&& other) noexcept` (move konstruktorius)
-  - `studentas& operator=(const studentas& other)` (copy priskyrimo operatorius)
-  - `studentas& operator=(studentas&& other) noexcept` (move priskyrimo operatorius)
-  - `~studentas()` (destruktorius)
-
 ## Programos spartos analizė
 
 #### Testai matuoja
