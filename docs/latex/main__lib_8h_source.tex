@@ -1,0 +1,69 @@
+\doxysection{main\+\_\+lib.\+h}
+\hypertarget{main__lib_8h_source}{}\label{main__lib_8h_source}\index{src/bibliotekos/main\_lib.h@{src/bibliotekos/main\_lib.h}}
+\mbox{\hyperlink{main__lib_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00004\ \textcolor{keyword}{using\ }std::runtime\_error;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ }std::vector;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{using\ }std::cin;}
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ }std::cout;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ }std::endl;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ }std::istream;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ }std::ostream;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ }std::fixed;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{using\ }std::left;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{using\ }std::setprecision;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ }std::setw;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{using\ }std::find\_if;}
+\DoxyCodeLine{00024\ \textcolor{keyword}{using\ }std::nth\_element;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{using\ }std::sort;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{using\ }std::to\_string;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{using\ }std::istringstream;}
+\DoxyCodeLine{00033\ \textcolor{keyword}{using\ }std::stringstream;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{using\ }std::ifstream;}
+\DoxyCodeLine{00037\ \textcolor{keyword}{using\ }std::ofstream;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{using\ }std::chrono::duration;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{using\ }std::chrono::duration\_cast;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{using\ }std::chrono::high\_resolution\_clock;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{using\ }std::chrono::milliseconds;}
+\DoxyCodeLine{00044\ \textcolor{keyword}{using\ }std::chrono::time\_point;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <conio.h>}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{using\ }std::make\_move\_iterator;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00052\ \textcolor{keyword}{using\ }std::move;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ output\_file[]\ =\ \textcolor{stringliteral}{"{}teksto\_failai/rezultatai.txt"{}};\ \textcolor{comment}{//\ failo,\ į\ kurį\ išvedami\ rezultatų\ duomenys,\ direktorija/pavadinimas}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{main__lib_8cpp_adbbdab5e302a416ca050337d54457d12}{ar\_skaiciuoti\_laika}};}
+\DoxyCodeLine{00057\ \textcolor{keyword}{extern}\ time\_point<high\_resolution\_clock>\ \mbox{\hyperlink{main__lib_8cpp_ab5bf5d57253e3d2b144be48504b74eda}{pradzios\_laikas}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{main__lib_8cpp_a91b73a65106c378002a02092e5c565aa}{vardai}}[];}
+\DoxyCodeLine{00060\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{main__lib_8cpp_a3708c616f0cfb643dd7bc5c008e09d78}{pavardes}}[];}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main__lib_8h_a766d74fc511097d8ba71a6cc3f3d03f9}{timer\_prad}}();}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main__lib_8h_a0eb84a25e11284efdf6be832f7b5997c}{timer\_pab}}(\textcolor{keywordtype}{string}\ operacija);}
+
+\end{DoxyCode}

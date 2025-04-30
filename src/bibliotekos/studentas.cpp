@@ -1,9 +1,6 @@
 #include "studentas.h"
 #include "isvedimas.h"
 
-// # Klases metodai
-
-// destruktorius
 studentas::~studentas()
 {
     paz.clear();
@@ -14,7 +11,6 @@ studentas::~studentas()
     galutinisMed = 0;
 }
 
-// ## konstruktoriai
 studentas::studentas()
 {
     var = "";
@@ -24,15 +20,14 @@ studentas::studentas()
     galutinisMed = 0;
 };
 
-studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas) : zmogus(vardas, pavarde), paz(paz), egz(egzaminas) {}
+studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas)
+    : zmogus(vardas, pavarde), paz(paz), egz(egzaminas) {}
 
-// konstruktorius naudojant stream
 studentas::studentas(istream &is, int nd_count)
 {
     paz_ivedimas(is, nd_count);
 };
 
-// copy konstruktorius
 studentas::studentas(const studentas &other)
     : zmogus(other.var, other.pav),
       paz(other.paz),
@@ -40,7 +35,6 @@ studentas::studentas(const studentas &other)
       galutinisVid(other.galutinisVid),
       galutinisMed(other.galutinisMed) {}
 
-// move konstruktorius
 studentas::studentas(studentas &&other) noexcept
     : zmogus(move(other.var), move(other.pav)),
       paz(move(other.paz)),
@@ -48,7 +42,6 @@ studentas::studentas(studentas &&other) noexcept
       galutinisVid(other.galutinisVid),
       galutinisMed(other.galutinisMed) {}
 
-// copy operatorius
 studentas &studentas::operator=(const studentas &other)
 {
     if (this == &other)
@@ -64,7 +57,6 @@ studentas &studentas::operator=(const studentas &other)
     return *this;
 }
 
-// move operatorius
 studentas &studentas::operator=(studentas &&other) noexcept
 {
     if (this == &other)
@@ -80,9 +72,6 @@ studentas &studentas::operator=(studentas &&other) noexcept
     return *this;
 }
 
-// ## setteriai
-
-// pazymiu ivedimas
 istream &studentas::paz_ivedimas(istream &is, int nd_count)
 {
     int pazymys;
@@ -94,7 +83,6 @@ istream &studentas::paz_ivedimas(istream &is, int nd_count)
     return is;
 };
 
-// vardu, pavardziu ir egz rezultatu ivedimas su '>>' operatorium
 istream &operator>>(istream &is, studentas &s)
 {
     is >> s.var >> s.pav >> s.egz;
@@ -162,7 +150,6 @@ void studentas::gen_paz()
     egz = rand() % 10;
 }
 
-// galutinio balo apskaiciavimas
 void studentas::calc_gal_vidurkis()
 {
     double vid = 0;
@@ -201,11 +188,9 @@ void studentas::calc_gal_mediana()
     galutinisMed = (0.4 * mediana) + (0.6 * egz);
 }
 
-// # Ne metodai, bet darbas su klase
 void failo_ivedimas(vector<studentas> &grupe, istream &is)
 {
     string line, word;
-
     getline(is, line);
     istringstream antraste(line);
     int nd_count{};
@@ -216,8 +201,7 @@ void failo_ivedimas(vector<studentas> &grupe, istream &is)
     nd_count -= 3;
 
     timer_prad();
-    cout << endl
-         << "Ivedami duomenys..." << endl;
+    cout << endl << "Ivedami duomenys..." << endl;
 
     while (getline(is, line))
     {
@@ -254,7 +238,7 @@ void stud_isskirstymas(const vector<studentas> &grupe)
 
     ofstream fr_i("teksto_failai/islaikytojai.txt");
     if (!fr_i)
-        throw runtime_error("Nepavyko atidaryti islaikytoju failo");
+        throw runtime_error("Nepavyko atidaryti islaikytojui failo");
     rez_isvedimas(fr_i, 'n', temp);
     fr_i.close();
     timer_pab("Isvedimas i faila");

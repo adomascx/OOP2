@@ -1,0 +1,182 @@
+\doxysection{zmogus Class Reference}
+\hypertarget{classzmogus}{}\label{classzmogus}\index{zmogus@{zmogus}}
+
+
+Bazinė klasė, apibrėžianti asmenį.  
+
+
+
+
+{\ttfamily \#include $<$studentas.\+h$>$}
+
+
+
+Inheritance diagram for zmogus\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{classzmogus__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classzmogus_a903c961f64b1adcc7bab25cba2814811}{zmogus}} ()=default
+\begin{DoxyCompactList}\small\item\em Numatytasis konstruktorius. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classzmogus_a534cdd251cd45c1204ec5aa79e4b45e0}{zmogus}} (const string \&\mbox{\hyperlink{classzmogus_a5fe83e4f00257f64c090f41064b21ce4}{vardas}}, const string \&\mbox{\hyperlink{classzmogus_a9ee703b4f45b03fccd07197f52210a6c}{pavarde}})
+\begin{DoxyCompactList}\small\item\em Parametrizuotas konstruktorius. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classzmogus_a5fe83e4f00257f64c090f41064b21ce4}{vardas}} () const =0
+\begin{DoxyCompactList}\small\item\em Grąžina asmens vardą. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classzmogus_a9ee703b4f45b03fccd07197f52210a6c}{pavarde}} () const =0
+\begin{DoxyCompactList}\small\item\em Grąžina asmens pavardę. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classzmogus_a8657cb9abe24c98a50698847bafaeb68}{rank\+\_\+vardo\+\_\+ivedimas}} ()=0
+\begin{DoxyCompactList}\small\item\em Prašo įvesti asmens vardą. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classzmogus_a7fbf80b93ad259cb41423cb96a656919}{rank\+\_\+paz\+\_\+ivedimas}} ()=0
+\begin{DoxyCompactList}\small\item\em Prašo įvesti asmens pažymius. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classzmogus_a67d08c33049ff379f5c8b72745416239}{\texorpdfstring{$\sim$}{\string~}zmogus}} ()
+\begin{DoxyCompactList}\small\item\em Virtualus destruktorius. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classzmogus_a5feb8368e51a56118d057d6f7a1476b2}{var}}
+\begin{DoxyCompactList}\small\item\em Asmens vardas. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classzmogus_a63777d057453ce32b9ab0cea5b282c0c}{pav}}
+\begin{DoxyCompactList}\small\item\em Asmens pavardė \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Bazinė klasė, apibrėžianti asmenį. 
+
+Ši klasė pateikia pagrindinę sąsają asmens informacijos gavimui bei įvedimui. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classzmogus_a903c961f64b1adcc7bab25cba2814811}\index{zmogus@{zmogus}!zmogus@{zmogus}}
+\index{zmogus@{zmogus}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{zmogus()}{zmogus()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classzmogus_a903c961f64b1adcc7bab25cba2814811} 
+zmogus\+::zmogus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Numatytasis konstruktorius. 
+
+\Hypertarget{classzmogus_a534cdd251cd45c1204ec5aa79e4b45e0}\index{zmogus@{zmogus}!zmogus@{zmogus}}
+\index{zmogus@{zmogus}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{zmogus()}{zmogus()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classzmogus_a534cdd251cd45c1204ec5aa79e4b45e0} 
+zmogus\+::zmogus (\begin{DoxyParamCaption}\item[{const string \&}]{vardas}{, }\item[{const string \&}]{pavarde}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Parametrizuotas konstruktorius. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vardas} & Asmens vardas. \\
+\hline
+{\em pavarde} & Asmens pavardė. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classzmogus_a67d08c33049ff379f5c8b72745416239}\index{zmogus@{zmogus}!````~zmogus@{\texorpdfstring{$\sim$}{\string~}zmogus}}
+\index{````~zmogus@{\texorpdfstring{$\sim$}{\string~}zmogus}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}zmogus()}{\string~zmogus()}}
+{\footnotesize\ttfamily \label{classzmogus_a67d08c33049ff379f5c8b72745416239} 
+virtual zmogus\+::\texorpdfstring{$\sim$}{\string~}zmogus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtualus destruktorius. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classzmogus_a9ee703b4f45b03fccd07197f52210a6c}\index{zmogus@{zmogus}!pavarde@{pavarde}}
+\index{pavarde@{pavarde}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{pavarde()}{pavarde()}}
+{\footnotesize\ttfamily \label{classzmogus_a9ee703b4f45b03fccd07197f52210a6c} 
+virtual string zmogus\+::pavarde (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Grąžina asmens pavardę. 
+
+\begin{DoxyReturn}{Returns}
+string Asmens pavardė. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classstudentas_a67db291a53b86c2a703ddfbe35c564f9}{studentas}}.
+
+\Hypertarget{classzmogus_a7fbf80b93ad259cb41423cb96a656919}\index{zmogus@{zmogus}!rank\_paz\_ivedimas@{rank\_paz\_ivedimas}}
+\index{rank\_paz\_ivedimas@{rank\_paz\_ivedimas}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{rank\_paz\_ivedimas()}{rank\_paz\_ivedimas()}}
+{\footnotesize\ttfamily \label{classzmogus_a7fbf80b93ad259cb41423cb96a656919} 
+virtual void zmogus\+::rank\+\_\+paz\+\_\+ivedimas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Prašo įvesti asmens pažymius. 
+
+
+
+Implemented in \mbox{\hyperlink{classstudentas_a51a0c2f07a60f883ef44e0f2752d48b4}{studentas}}.
+
+\Hypertarget{classzmogus_a8657cb9abe24c98a50698847bafaeb68}\index{zmogus@{zmogus}!rank\_vardo\_ivedimas@{rank\_vardo\_ivedimas}}
+\index{rank\_vardo\_ivedimas@{rank\_vardo\_ivedimas}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{rank\_vardo\_ivedimas()}{rank\_vardo\_ivedimas()}}
+{\footnotesize\ttfamily \label{classzmogus_a8657cb9abe24c98a50698847bafaeb68} 
+virtual void zmogus\+::rank\+\_\+vardo\+\_\+ivedimas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Prašo įvesti asmens vardą. 
+
+
+
+Implemented in \mbox{\hyperlink{classstudentas_acda99f970ac7ebc6a17323c7afa7dde8}{studentas}}.
+
+\Hypertarget{classzmogus_a5fe83e4f00257f64c090f41064b21ce4}\index{zmogus@{zmogus}!vardas@{vardas}}
+\index{vardas@{vardas}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{vardas()}{vardas()}}
+{\footnotesize\ttfamily \label{classzmogus_a5fe83e4f00257f64c090f41064b21ce4} 
+virtual string zmogus\+::vardas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Grąžina asmens vardą. 
+
+\begin{DoxyReturn}{Returns}
+string Asmens vardas. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classstudentas_a0b7de58abe8eee12adb5da298d3c7e6a}{studentas}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classzmogus_a63777d057453ce32b9ab0cea5b282c0c}\index{zmogus@{zmogus}!pav@{pav}}
+\index{pav@{pav}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{pav}{pav}}
+{\footnotesize\ttfamily \label{classzmogus_a63777d057453ce32b9ab0cea5b282c0c} 
+string zmogus\+::pav\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Asmens pavardė 
+
+\Hypertarget{classzmogus_a5feb8368e51a56118d057d6f7a1476b2}\index{zmogus@{zmogus}!var@{var}}
+\index{var@{var}!zmogus@{zmogus}}
+\doxysubsubsection{\texorpdfstring{var}{var}}
+{\footnotesize\ttfamily \label{classzmogus_a5feb8368e51a56118d057d6f7a1476b2} 
+string zmogus\+::var\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Asmens vardas. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/bibliotekos/\mbox{\hyperlink{studentas_8h}{studentas.\+h}}\end{DoxyCompactItemize}

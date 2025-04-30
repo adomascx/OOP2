@@ -1,0 +1,89 @@
+\doxysection{src/bibliotekos/studentas.cpp File Reference}
+\hypertarget{studentas_8cpp}{}\label{studentas_8cpp}\index{src/bibliotekos/studentas.cpp@{src/bibliotekos/studentas.cpp}}
+{\ttfamily \#include "{}studentas.\+h"{}}\newline
+{\ttfamily \#include "{}isvedimas.\+h"{}}\newline
+Include dependency graph for studentas.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{studentas_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+istream \& \mbox{\hyperlink{studentas_8cpp_aa4cfc2d1d601c2fc9fa34031b7cfcbb2}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classstudentas}{studentas}} \&s)
+\item 
+ostream \& \mbox{\hyperlink{studentas_8cpp_af9bbd56925d9346ba19d5bf70830f103}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classstudentas}{studentas}} \&s)
+\item 
+void \mbox{\hyperlink{studentas_8cpp_a88c645aea4cb89a1957124dcb079b9aa}{failo\+\_\+ivedimas}} (vector$<$ \mbox{\hyperlink{classstudentas}{studentas}} $>$ \&grupe, istream \&is)
+\begin{DoxyCompactList}\small\item\em Nuskaito \textquotesingle{}studentas\textquotesingle{} duomenis iš įvesties failo srauto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{studentas_8cpp_a1c6ce3570e5aaf8b4770f20751260608}{stud\+\_\+isskirstymas}} (const vector$<$ \mbox{\hyperlink{classstudentas}{studentas}} $>$ \&grupe)
+\begin{DoxyCompactList}\small\item\em Išskiria \textquotesingle{}studentas\textquotesingle{} objektus į dvi grupes, remiantis jų galutinio pažymio vidurkiu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{studentas_8cpp_a88c645aea4cb89a1957124dcb079b9aa}\index{studentas.cpp@{studentas.cpp}!failo\_ivedimas@{failo\_ivedimas}}
+\index{failo\_ivedimas@{failo\_ivedimas}!studentas.cpp@{studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{failo\_ivedimas()}{failo\_ivedimas()}}
+{\footnotesize\ttfamily \label{studentas_8cpp_a88c645aea4cb89a1957124dcb079b9aa} 
+void failo\+\_\+ivedimas (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classstudentas}{studentas}} $>$ \&}]{grupe}{, }\item[{istream \&}]{is}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaito \textquotesingle{}studentas\textquotesingle{} duomenis iš įvesties failo srauto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grupe} & Vektorius \textquotesingle{}studentas\textquotesingle{} objektų, kurie bus užpildyti. \\
+\hline
+{\em is} & Įvesties srautas, iš kurio skaitomi duomenys. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{studentas_8cpp_af9bbd56925d9346ba19d5bf70830f103}\index{studentas.cpp@{studentas.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!studentas.cpp@{studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{studentas_8cpp_af9bbd56925d9346ba19d5bf70830f103} 
+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{classstudentas}{studentas}} \&}]{s}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Išvesties srautas. \\
+\hline
+{\em s} & Const reference į \textquotesingle{}studentas\textquotesingle{} objektą. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream\& Išvesties srauto reference. 
+\end{DoxyReturn}
+\Hypertarget{studentas_8cpp_aa4cfc2d1d601c2fc9fa34031b7cfcbb2}\index{studentas.cpp@{studentas.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!studentas.cpp@{studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily \label{studentas_8cpp_aa4cfc2d1d601c2fc9fa34031b7cfcbb2} 
+istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is}{, }\item[{\mbox{\hyperlink{classstudentas}{studentas}} \&}]{s}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Įvesties srautas. \\
+\hline
+{\em s} & Reference į \textquotesingle{}studentas\textquotesingle{} objektą. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+istream\& Įvesties srauto reference. 
+\end{DoxyReturn}
+\Hypertarget{studentas_8cpp_a1c6ce3570e5aaf8b4770f20751260608}\index{studentas.cpp@{studentas.cpp}!stud\_isskirstymas@{stud\_isskirstymas}}
+\index{stud\_isskirstymas@{stud\_isskirstymas}!studentas.cpp@{studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{stud\_isskirstymas()}{stud\_isskirstymas()}}
+{\footnotesize\ttfamily \label{studentas_8cpp_a1c6ce3570e5aaf8b4770f20751260608} 
+void stud\+\_\+isskirstymas (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classstudentas}{studentas}} $>$ \&}]{grupe}{}\end{DoxyParamCaption})}
+
+
+
+Išskiria \textquotesingle{}studentas\textquotesingle{} objektus į dvi grupes, remiantis jų galutinio pažymio vidurkiu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grupe} & Nuolatinė reference į \textquotesingle{}studentas\textquotesingle{} objektų vektorių. \\
+\hline
+\end{DoxyParams}
