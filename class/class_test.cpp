@@ -5,50 +5,44 @@ int main(int argc, char *argv[])
 {
      // Default konstruktoriaus testavimas
      studentas studDefault;
-     cout << "Numatytojo konstruktoriaus testas sekmingas" << endl;
+     cout << "Numatytojo konstruktoriaus testas sekmingas:" << studDefault;
 
      // Bazines klases testavimas naudojant dynamic_cast
      if (dynamic_cast<zmogus *>(&studDefault))
           cout << "Bazines klases paveldejimo testas sekmingas" << endl;
      else
           cout << "Bazines klases paveldejimo testas NESEKMINGAS" << endl;
-
+     
      // Parametrinio konstruktoriaus testavimas
      vector<int> sampleGrades{2, 9, 10};
      studentas studParam("Jone", "Jonaityte", sampleGrades, 10);
-     cout << "Parametrinio konstruktoriaus testas sekmingas: "
-          << studParam.vardas() << " " << studParam.pavarde() << endl;
+     cout << "Parametrinio konstruktoriaus testas sekmingas: " << studParam;
 
-     // Kopijavimo konstruktoriaus testavimas
+     // Kopijavimo (copy) konstruktoriaus testavimas
      studentas studCopyConstructed(studParam);
-     cout << "Kopijavimo konstruktoriaus testas sekmingas: "
-          << studCopyConstructed.vardas() << " " << studCopyConstructed.pavarde() << endl;
+     cout << "Kopijavimo konstruktoriaus testas sekmingas: " << studCopyConstructed;
 
-     // Perkelimo konstruktoriaus testavimas
+     // Perkelimo (move) konstruktoriaus testavimas
      studentas studMoveConstructed(move(studParam));
-     cout << "Perkelimo konstruktoriaus testas sekmingas: "
-          << studMoveConstructed.vardas() << " " << studMoveConstructed.pavarde() << endl;
+     cout << "Perkelimo konstruktoriaus testas sekmingas: " << studMoveConstructed
+          << "Like duomenys: " << studParam;
 
-     // Kopijavimo priskyrimo testavimas
+     // Kopijavimo priskyrimo (operator=) testavimas
      studentas studCopyAssigned;
      studCopyAssigned = studCopyConstructed;
-     cout << "Kopijavimo priskyrimo testas sekmingas: "
-          << studCopyAssigned.vardas() << " " << studCopyAssigned.pavarde() << endl;
+     cout << "Kopijavimo priskyrimo testas sekmingas: " << studCopyAssigned;
 
-     // Perkelimo priskyrimo testavimas
+     // Perkelimo priskyrimo (move operator=) testavimas
      studentas studMoveAssigned;
      studMoveAssigned = move(studMoveConstructed);
-     cout << "Perkelimo priskyrimo testas sekmingas: "
-          << studMoveAssigned.vardas() << " " << studMoveAssigned.pavarde() << endl;
+     cout << "Perkelimo priskyrimo testas sekmingas: " << studMoveAssigned
+          << "Like duomenys: " << studMoveConstructed;
 
      // Ivedimo metodu testavimas (naudojant stringstream)
-     {
-          std::stringstream inputMock("Jonas Jonaitis 2 9 10 7");
-          studentas studInput;
-          studInput.paz_ivedimas(inputMock, 3);
-          cout << "Ivedimo metodu testas sekmingas: "
-               << studInput.vardas() << " " << studInput.pavarde() << endl;
-     }
+     std::stringstream inputMock("Jonas Jonaitis 2 9 10 7");
+     studentas studInput;
+     studInput.paz_ivedimas(inputMock, 3);
+     cout << "Ivedimo metodu testas sekmingas: " << studInput.vardas() << " " << studInput.pavarde() << endl;
 
      // Isvedimo metodu testavimas (galutinis pazymys)
      studCopyAssigned.calc_gal_mediana();
@@ -59,25 +53,19 @@ int main(int argc, char *argv[])
      cout << "Isvedimo metodu testas sekmingas" << endl;
 
      // Operator>> overload test
-     {
-          stringstream inputOp("Petras Petraitis 7");
-          studentas studOp;
-          inputOp >> studOp;
-          cout << "Operator>> testas sekmingas: "
-               << studOp.vardas() << " " << studOp.pavarde() << endl;
-     }
+     stringstream inputOp("Petras Petraitis 7");
+     studentas studOp;
+     inputOp >> studOp;
+     cout << "Operator>> testas sekmingas: " << studOp.vardas() << " " << studOp.pavarde() << endl;
 
      // Operator<< overload test
-     {
-          vector<int> sampleGradesTest{5, 7, 9};
-          studentas studOut("Antanas", "Antanaitis", sampleGradesTest, 8);
-          studOut.calc_gal_vidurkis();
-          studOut.calc_gal_mediana();
-          stringstream outputMock;
-          outputMock << studOut;
-          cout << "Operator<< testas sekmingas. Isvedimo rezultatas:" << endl
-               << outputMock.str();
-     }
+     vector<int> sampleGradesTest{5, 7, 9};
+     studentas studOut("Antanas", "Antanaitis", sampleGradesTest, 8);
+     studOut.calc_gal_vidurkis();
+     studOut.calc_gal_mediana();
+     stringstream outputMock;
+     outputMock << studOut;
+     cout << "Operator<< testas sekmingas. Isvedimo rezultatas:" << outputMock.str();
 
      // Destruktoriaus testas
      cout << "Destruktoriaus testas (bus iskviestas automatiskai pabaigoje)" << endl;
