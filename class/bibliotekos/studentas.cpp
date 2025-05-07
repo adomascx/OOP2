@@ -24,12 +24,18 @@ studentas::studentas()
     galutinisMed = 0;
 };
 
-studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas) : zmogus(vardas, pavarde), paz(paz), egz(egzaminas) {}
+studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas) : zmogus(vardas, pavarde), paz(paz), egz(egzaminas)
+{
+    calc_gal_vidurkis();
+    calc_gal_mediana();
+}
 
 // konstruktorius naudojant stream
 studentas::studentas(istream &is, int nd_count)
 {
     paz_ivedimas(is, nd_count);
+    calc_gal_vidurkis();
+    calc_gal_mediana();
 };
 
 // copy konstruktorius
@@ -46,7 +52,7 @@ studentas::studentas(studentas &&other) noexcept
       paz(move(other.paz)),
       egz(other.egz),
       galutinisVid(other.galutinisVid),
-      galutinisMed(other.galutinisMed) {}
+      galutinisMed(other.galutinisMed) { other.~studentas(); }
 
 // copy operatorius
 studentas &studentas::operator=(const studentas &other)
@@ -73,10 +79,10 @@ studentas &studentas::operator=(studentas &&other) noexcept
     var = move(other.var);
     pav = move(other.pav);
     paz = move(other.paz);
-    egz = other.egz;
-    galutinisVid = other.galutinisVid;
-    galutinisMed = other.galutinisMed;
-
+    egz = move(other.egz);
+    galutinisVid = move(other.galutinisVid);
+    galutinisMed = move(other.galutinisMed);
+    other.~studentas();
     return *this;
 }
 

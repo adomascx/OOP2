@@ -3,16 +3,13 @@
 
 int main(int argc, char *argv[])
 {
+     // Patikrinti kompiliavimo metu, kad "zmogus" yra abstrakti klasė
+     static_assert(std::is_abstract<zmogus>::value, "Klaida: 'zmogus' turi būti abstrakti klasė ir negalima jos instancijuoti");
+
      // Default konstruktoriaus testavimas
      studentas studDefault;
      cout << "Numatytojo konstruktoriaus testas sekmingas:" << studDefault;
 
-     // Bazines klases testavimas naudojant dynamic_cast
-     if (dynamic_cast<zmogus *>(&studDefault))
-          cout << "Bazines klases paveldejimo testas sekmingas" << endl;
-     else
-          cout << "Bazines klases paveldejimo testas NESEKMINGAS" << endl;
-     
      // Parametrinio konstruktoriaus testavimas
      vector<int> sampleGrades{2, 9, 10};
      studentas studParam("Jone", "Jonaityte", sampleGrades, 10);
@@ -36,7 +33,7 @@ int main(int argc, char *argv[])
      studentas studMoveAssigned;
      studMoveAssigned = move(studMoveConstructed);
      cout << "Perkelimo priskyrimo testas sekmingas: " << studMoveAssigned
-          << "Like duomenys: " << studMoveConstructed;
+          << "Like duomenys: " << "AAAAAAA" << studMoveConstructed << "BBBBBBB";
 
      // Ivedimo metodu testavimas (naudojant stringstream)
      std::stringstream inputMock("Jonas Jonaitis 2 9 10 7");
