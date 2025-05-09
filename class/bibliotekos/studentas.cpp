@@ -43,8 +43,12 @@ studentas::studentas(const string &vardas, const string &pavarde, const vector<i
 studentas::studentas(istream &is, int nd_count)
 {
     paz_ivedimas(is, nd_count);
-    calc_gal_vidurkis();
-    calc_gal_mediana();
+    cout << "A";
+    if (!paz.empty())
+    {
+        calc_gal_vidurkis();
+        calc_gal_mediana();
+    }
 };
 
 // copy konstruktorius
@@ -100,12 +104,17 @@ studentas &studentas::operator=(studentas &&other) noexcept
 // pazymiu ivedimas
 istream &studentas::paz_ivedimas(istream &is, int nd_count)
 {
-    int pazymys;
+    is >> var >> pav;
+
     for (int i = 0; i < nd_count; i++)
     {
+        int pazymys;
         is >> pazymys;
         paz.push_back(pazymys);
     }
+
+    is >> egz;
+
     return is;
 };
 
@@ -261,13 +270,13 @@ void stud_isskirstymas(const vector<studentas> &grupe)
     timer_pab("Studentu isskirstymas");
 
     timer_prad();
-    ofstream fr_k("teksto_failai/kartotojai.txt");
+    ofstream fr_k("txt/kartotojai.txt");
     if (!fr_k)
         throw runtime_error("Nepavyko atidaryti kartotoju failo");
     rez_isvedimas(fr_k, 'n', kartotojai);
     fr_k.close();
 
-    ofstream fr_i("teksto_failai/islaikytojai.txt");
+    ofstream fr_i("txt/islaikytojai.txt");
     if (!fr_i)
         throw runtime_error("Nepavyko atidaryti islaikytoju failo");
     rez_isvedimas(fr_i, 'n', temp);

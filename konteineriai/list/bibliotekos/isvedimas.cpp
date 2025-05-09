@@ -72,14 +72,14 @@ void stud_isskirstymas_3(const list<stud_struct> &grupe)
     timer_pab("Studentu isskirstymas");
 
     // timer_prad();
-    ofstream fr_k("teksto_failai/kartotojai.txt");
+    ofstream fr_k("txt/kartotojai.txt");
     if (!fr_k)
         throw runtime_error("Nepavyko atidaryti kartotoju failo");
 
     rez_isvedimas(fr_k, 'n', temp);
     fr_k.close();
 
-    ofstream fr_i("teksto_failai/islaikytojai.txt");
+    ofstream fr_i("txt/islaikytojai.txt");
     if (!fr_i)
         throw runtime_error("Nepavyko atidaryti islaikytoju failo");
     rez_isvedimas(fr_i, 'n', islaikytojai);
@@ -114,7 +114,7 @@ void stud_isskirstymas_2(const list<stud_struct> &grupe)
     // timer_prad();
 
     // 'kartotoju' isvedimas i faila
-    ofstream fr_k("teksto_failai/kartotojai.txt");
+    ofstream fr_k("txt/kartotojai.txt");
     if (!fr_k)
         throw runtime_error("Nepavyko atidaryti kartotoju failo");
 
@@ -122,7 +122,7 @@ void stud_isskirstymas_2(const list<stud_struct> &grupe)
     fr_k.close();
 
     // 'islaikytoju' isvedimas i faila
-    ofstream fr_i("teksto_failai/islaikytojai.txt");
+    ofstream fr_i("txt/islaikytojai.txt");
     if (!fr_i)
         throw runtime_error("Nepavyko atidaryti islaikytoju failo");
 
@@ -164,7 +164,7 @@ void stud_isskirstymas_1(const list<stud_struct> &grupe)
     // timer_prad();
 
     // 'kartotoju' isvedimas i faila
-    ofstream fr_k("teksto_failai/kartotojai.txt");
+    ofstream fr_k("txt/kartotojai.txt");
     if (!fr_k)
         throw runtime_error("Nepavyko atidaryti kartotoju failo");
 
@@ -172,7 +172,7 @@ void stud_isskirstymas_1(const list<stud_struct> &grupe)
     fr_k.close();
 
     // 'islaikytoju' isvedimas i faila
-    ofstream fr_i("teksto_failai/islaikytojai.txt");
+    ofstream fr_i("txt/islaikytojai.txt");
     if (!fr_i)
         throw runtime_error("Nepavyko atidaryti islaikytoju failo");
 

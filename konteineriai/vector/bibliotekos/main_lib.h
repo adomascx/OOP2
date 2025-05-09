@@ -47,7 +47,7 @@ using std::chrono::time_point;
 #include <iterator>
 using std::make_move_iterator;
 
-static const char output_file[] = "teksto_failai/rezultatai.txt"; // failo, į kurį išvedami rezultatų duomenys, direktorija/pavadinimas
+static const char output_file[] = "txt/rezultatai.txt"; // failo, į kurį išvedami rezultatų duomenys, direktorija/pavadinimas
 
 struct stud_struct
 {

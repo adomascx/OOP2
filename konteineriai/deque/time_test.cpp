@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 
         if (string(argv[3]) == "1")
         {
-            gen_file = "teksto_failai/studentai" + to_string(dydis) + ".txt";
+            gen_file = "txt/studentai" + to_string(dydis) + ".txt";
             failo_generavimas(gen_file, 10, dydis);
         }
         break;
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
         break;
     }
 
-    gen_file = "teksto_failai/studentai" + to_string(dydis) + ".txt";
+    gen_file = "txt/studentai" + to_string(dydis) + ".txt";
     cout << endl
          << "filesize: " << dydis;
 
