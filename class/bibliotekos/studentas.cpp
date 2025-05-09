@@ -15,10 +15,20 @@ studentas::~studentas()
 }
 
 // konstruktoriai
-studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas) : var(vardas), pav(pavarde), paz(paz), egz(egzaminas)
+studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas)
+    : var(vardas), 
+      pav(pavarde),
+      paz(paz),
+      egz(egzaminas),
+      galutinisVid(0),
+      galutinisMed(0)
 {
-    calc_gal_vidurkis();
-    calc_gal_mediana();
+    // Apskaičiavimus atliekame tik jei yra namų darbų pažymių
+    if (!paz.empty())
+    {
+        calc_gal_vidurkis();
+        calc_gal_mediana();
+    }
 }
 
 // konstruktorius naudojant stream
