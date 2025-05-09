@@ -5,7 +5,8 @@ var indexSectionsWithContent =
   2: "cimostz",
   3: "cfgmoprstvz~",
   4: "apv",
-  5: "o"
+  5: "o",
+  6: "c"
 };
 
 var indexSectionNames =
@@ -15,7 +16,8 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "related"
+  5: "related",
+  6: "defines"
 };
 
 var indexSectionLabels =
@@ -25,6 +27,7 @@ var indexSectionLabels =
   2: "Files",
   3: "Functions",
   4: "Variables",
-  5: "Friends"
+  5: "Friends",
+  6: "Macros"
 };
 

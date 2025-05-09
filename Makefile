@@ -1,6 +1,8 @@
 CXX = g++
 CXXFLAGS = -fdiagnostics-color=always -g -std=c++17 -Os
 CLASS_DIR = src
+TEST_SOURCES = src/hello_test.cpp
+TEST_EXECUTABLE = build/hello_test.exe
 
 all: test_time test_class main
 

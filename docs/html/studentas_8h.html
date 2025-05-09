@@ -126,16 +126,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstudentas.html">studentas</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">'studentas' klasė, paveldinti iš zmogus.  <a href="classstudentas.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">'studentas' klasė, paveldinti iš klasės zmogus.  <a href="classstudentas.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a88c645aea4cb89a1957124dcb079b9aa" id="r_a88c645aea4cb89a1957124dcb079b9aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88c645aea4cb89a1957124dcb079b9aa">failo_ivedimas</a> (vector&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;grupe, istream &amp;is)</td></tr>
-<tr class="memdesc:a88c645aea4cb89a1957124dcb079b9aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nuskaito 'studentas' duomenis iš įvesties failo srauto.  <br /></td></tr>
+<tr class="memdesc:a88c645aea4cb89a1957124dcb079b9aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nuskaito studento duomenis iš įvesties failo srauto.  <br /></td></tr>
 <tr class="separator:a88c645aea4cb89a1957124dcb079b9aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c6ce3570e5aaf8b4770f20751260608" id="r_a1c6ce3570e5aaf8b4770f20751260608"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c6ce3570e5aaf8b4770f20751260608">stud_isskirstymas</a> (const vector&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;grupe)</td></tr>
-<tr class="memdesc:a1c6ce3570e5aaf8b4770f20751260608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Išskiria 'studentas' objektus į dvi grupes, remiantis jų galutinio pažymio vidurkiu.  <br /></td></tr>
+<tr class="memdesc:a1c6ce3570e5aaf8b4770f20751260608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Išskiria studentus į dvi grupes, remiantis jų galutiniu pažymiu.  <br /></td></tr>
 <tr class="separator:a1c6ce3570e5aaf8b4770f20751260608"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -158,7 +158,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Nuskaito 'studentas' duomenis iš įvesties failo srauto. </p>
+<p>Nuskaito studento duomenis iš įvesties failo srauto. </p>
+<p>Pirmoje eilutėje surašomi stulpelių pavadinimai, iš kurių nustatomas namų darbų pažymių skaičius (nd_count).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">grupe</td><td>Vektorius 'studentas' objektų, kurie bus užpildyti. </td></tr>
@@ -166,8 +167,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="studentas_8cpp_source.html#l00203">203</a> of file <a class="el" href="studentas_8cpp_source.html">studentas.cpp</a>.</p>
 
 </div>
 </div>
@@ -186,15 +185,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Išskiria 'studentas' objektus į dvi grupes, remiantis jų galutinio pažymio vidurkiu. </p>
+<p>Išskiria studentus į dvi grupes, remiantis jų galutiniu pažymiu. </p>
+<p>Studentai, kurių galutinis pažymys (vidurkis) yra mažesnis nei 5, laikomi kartotojais, o likę – išlaikytojais.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">grupe</td><td>Nuolatinė reference į 'studentas' objektų vektorių. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="studentas_8cpp_source.html#l00229">229</a> of file <a class="el" href="studentas_8cpp_source.html">studentas.cpp</a>.</p>
 
 </div>
 </div>

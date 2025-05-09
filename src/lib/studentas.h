@@ -3,7 +3,7 @@
 #include "zmogus.h"
 
 /**
- * @brief 'studentas' klasė, paveldinti iš zmogus.
+ * @brief 'studentas' klasė, paveldinti iš klasės zmogus.
  */
 class studentas : public zmogus
 {
@@ -26,7 +26,7 @@ public:
      *
      * @param vardas Studento vardas.
      * @param pavarde Studento pavardė.
-     * @param paz Vektorius, turintis studento pažymius.
+     * @param paz Vektorius, turintis studento namų darbų pažymius.
      * @param egzaminas Egzamino pažymys.
      */
     studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas);
@@ -34,7 +34,7 @@ public:
     /**
      * @brief Konstruktorius, naudojant įvesties srautą.
      *
-     * @param is Įvesties srautas, iš kurio skaitomi duomenys.
+     * @param is Įvesties srautas, iš kurio skaitomi studento duomenys.
      * @param nd_count Laukiamas namų darbų pažymių skaičius.
      */
     studentas(istream &is, int nd_count);
@@ -86,7 +86,7 @@ public:
     // Setteriai
 
     /**
-     * @brief Nuskaito namų darbų pažymius iš įvesties srauto.
+     * @brief Nuskaito studento namų darbų pažymius iš įvesties srauto.
      *
      * @param is Įvesties srautas.
      * @param nd_count Namų darbų pažymių skaičius, kuriuos reikia nuskaityti.
@@ -123,23 +123,25 @@ public:
     void rank_paz_ivedimas();
 
     /**
-     * @brief Generuoja atsitiktinius namų darbų ir egzamino pažymius.
+     * @brief Generuoja atsitiktinius studento namų darbų pažymius bei egzamino pažymį.
      */
     void gen_paz();
 
     /**
-     * @brief Apskaičiuoja galutinį pažymį remiantis namų darbų pažymių vidurkiu ir egzamino pažymiu.
+     * @brief Apskaičiuoja galutinį pažymį, remiantis studento namų darbų pažymių vidurkiu ir egzamino pažymiu.
      */
     void calc_gal_vidurkis();
 
     /**
-     * @brief Apskaičiuoja galutinį pažymį remiantis namų darbų pažymių mediana ir egzamino pažymiu.
+     * @brief Apskaičiuoja galutinį pažymį, remiantis studento namų darbų pažymių mediana ir egzamino pažymiu.
      */
     void calc_gal_mediana();
 };
 
 /**
- * @brief Nuskaito 'studentas' duomenis iš įvesties failo srauto.
+ * @brief Nuskaito studento duomenis iš įvesties failo srauto.
+ *
+ * Pirmoje eilutėje surašomi stulpelių pavadinimai, iš kurių nustatomas namų darbų pažymių skaičius (nd_count).
  *
  * @param grupe Vektorius 'studentas' objektų, kurie bus užpildyti.
  * @param is Įvesties srautas, iš kurio skaitomi duomenys.
@@ -147,7 +149,9 @@ public:
 void failo_ivedimas(vector<studentas> &grupe, istream &is);
 
 /**
- * @brief Išskiria 'studentas' objektus į dvi grupes, remiantis jų galutinio pažymio vidurkiu.
+ * @brief Išskiria studentus į dvi grupes, remiantis jų galutiniu pažymiu.
+ *
+ * Studentai, kurių galutinis pažymys (vidurkis) yra mažesnis nei 5, laikomi kartotojais, o likę – išlaikytojais.
  *
  * @param grupe Nuolatinė reference į 'studentas' objektų vektorių.
  */

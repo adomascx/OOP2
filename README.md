@@ -13,16 +13,33 @@
 - **v1.1:** Kodas migruotas į implementaciją su klasėmis, ištirtas programos veikimo laikas su skirtingomis optimizavimo vėliavėlėmis
 - **v1.2:** Implementuota "Rule of Five" principo realizacija, perdengti "<<" ir ">>" operatoriai, pradėta dokumentacija
 - **v1.5:** Sukurta bazinė klasė "zmogus", pagal kurią kuriama derived klasė "studentas"
-- **v2.0:**
+- **v2.0:** Sukurta kodo dokumentacija, implementuotas 'Catch2' testavimo framework, standartizuota projekto struktūra
 
 ## Įdiegimo instrukcijos
 
 Naudokite įtrauktą Makefile. Terminale vykdykite:
 
 - `make build` – sukompiliuoja programas
-- `make test` – sukompiliuoja laiko matavimo programas
+- `make test_time` – sukompiliuoja laiko matavimo programas
+- `make test_class` – sukompiliuoja klasės unit testus
 - `make all` – sukompiliuoja visas esamas programos versijas
 - `make clean` – ištrina sugeneruotus vykdomuosius failus.
+
+## Dokumentacija
+
+Šiame projekte dokumentacija generuojama naudojant [Doxygen](https://www.doxygen.nl/index.html). Norėdami peržiūrėti dokumentaciją, atlikite šiuos veiksmus:
+
+1. Įsitikinkite, kad turite įdiegtą Doxygen.
+2. Terminale (ar komandų eilutėje) nueikite į projekto šaknį.
+3. Paleiskite komandą:
+
+   ```sh
+   doxygen Doxyfile
+   ```
+
+4. Kai procesas baigsis, sugeneruota dokumentacija bus pasiekiama kataloge [docs/html/index.html](docs/html/index.html). Atidarykite šį failą naršyklėje, kad peržiūrėtumėte pilną kodo dokumentaciją, įskaitant klasės hierarchijas, failų sąsajas ir funkcijų aprašymus.
+
+Taip pat, siūloma rankiniu būdu kompiliuota PDF versija: [docs/OOP2.pdf](docs/OOP2.pdf)
 
 ## Programos spartos analizė
 

@@ -12,9 +12,9 @@ istream \& \mbox{\hyperlink{studentas_8cpp_aa4cfc2d1d601c2fc9fa34031b7cfcbb2}{op
 ostream \& \mbox{\hyperlink{studentas_8cpp_af9bbd56925d9346ba19d5bf70830f103}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classstudentas}{studentas}} \&s)
 \item 
 void \mbox{\hyperlink{studentas_8cpp_a88c645aea4cb89a1957124dcb079b9aa}{failo\+\_\+ivedimas}} (vector$<$ \mbox{\hyperlink{classstudentas}{studentas}} $>$ \&grupe, istream \&is)
-\begin{DoxyCompactList}\small\item\em Nuskaito \textquotesingle{}studentas\textquotesingle{} duomenis iš įvesties failo srauto. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Nuskaito studento duomenis iš įvesties failo srauto. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{studentas_8cpp_a1c6ce3570e5aaf8b4770f20751260608}{stud\+\_\+isskirstymas}} (const vector$<$ \mbox{\hyperlink{classstudentas}{studentas}} $>$ \&grupe)
-\begin{DoxyCompactList}\small\item\em Išskiria \textquotesingle{}studentas\textquotesingle{} objektus į dvi grupes, remiantis jų galutinio pažymio vidurkiu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Išskiria studentus į dvi grupes, remiantis jų galutiniu pažymiu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -26,7 +26,9 @@ void failo\+\_\+ivedimas (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperl
 
 
 
-Nuskaito \textquotesingle{}studentas\textquotesingle{} duomenis iš įvesties failo srauto. 
+Nuskaito studento duomenis iš įvesties failo srauto. 
+
+Pirmoje eilutėje surašomi stulpelių pavadinimai, iš kurių nustatomas namų darbų pažymių skaičius (nd\+\_\+count).
 
 
 \begin{DoxyParams}{Parameters}
@@ -35,10 +37,6 @@ Nuskaito \textquotesingle{}studentas\textquotesingle{} duomenis iš įvesties fa
 {\em is} & Įvesties srautas, iš kurio skaitomi duomenys. \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00203}{203}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
-
 \Hypertarget{studentas_8cpp_af9bbd56925d9346ba19d5bf70830f103}\index{studentas.cpp@{studentas.cpp}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!studentas.cpp@{studentas.cpp}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
@@ -55,10 +53,6 @@ ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os}{, }\i
 \begin{DoxyReturn}{Returns}
 ostream\& Išvesties srauto reference. 
 \end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
-
 \Hypertarget{studentas_8cpp_aa4cfc2d1d601c2fc9fa34031b7cfcbb2}\index{studentas.cpp@{studentas.cpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!studentas.cpp@{studentas.cpp}}
 \doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
@@ -75,10 +69,6 @@ istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is}{, }\i
 \begin{DoxyReturn}{Returns}
 istream\& Įvesties srauto reference. 
 \end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
-
 \Hypertarget{studentas_8cpp_a1c6ce3570e5aaf8b4770f20751260608}\index{studentas.cpp@{studentas.cpp}!stud\_isskirstymas@{stud\_isskirstymas}}
 \index{stud\_isskirstymas@{stud\_isskirstymas}!studentas.cpp@{studentas.cpp}}
 \doxysubsubsection{\texorpdfstring{stud\_isskirstymas()}{stud\_isskirstymas()}}
@@ -87,14 +77,12 @@ void stud\+\_\+isskirstymas (\begin{DoxyParamCaption}\item[{const vector$<$ \mbo
 
 
 
-Išskiria \textquotesingle{}studentas\textquotesingle{} objektus į dvi grupes, remiantis jų galutinio pažymio vidurkiu. 
+Išskiria studentus į dvi grupes, remiantis jų galutiniu pažymiu. 
+
+Studentai, kurių galutinis pažymys (vidurkis) yra mažesnis nei 5, laikomi kartotojais, o likę – išlaikytojais.
 
 
 \begin{DoxyParams}{Parameters}
 {\em grupe} & Nuolatinė reference į \textquotesingle{}studentas\textquotesingle{} objektų vektorių. \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00229}{229}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
-

@@ -1,4 +1,4 @@
 var class__test_8cpp =
 [
-    [ "main", "class__test_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97", null ]
+    [ "CATCH_CONFIG_MAIN", "class__test_8cpp.html#a656eb5868e824d59f489f910db438420", null ]
 ];

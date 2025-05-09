@@ -115,9 +115,7 @@ Include dependency graph for studentas.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="studentas_8cpp__incl.png" border="0" usemap="#asrc_2lib_2studentas_8cpp" alt=""/></div>
 </div>
-</div>
-<p><a href="studentas_8cpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa4cfc2d1d601c2fc9fa34031b7cfcbb2" id="r_aa4cfc2d1d601c2fc9fa34031b7cfcbb2"><td class="memItemLeft" align="right" valign="top">istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4cfc2d1d601c2fc9fa34031b7cfcbb2">operator&gt;&gt;</a> (istream &amp;is, <a class="el" href="classstudentas.html">studentas</a> &amp;s)</td></tr>
@@ -125,10 +123,10 @@ Functions</h2></td></tr>
 <tr class="memitem:af9bbd56925d9346ba19d5bf70830f103" id="r_af9bbd56925d9346ba19d5bf70830f103"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9bbd56925d9346ba19d5bf70830f103">operator&lt;&lt;</a> (ostream &amp;os, const <a class="el" href="classstudentas.html">studentas</a> &amp;s)</td></tr>
 <tr class="separator:af9bbd56925d9346ba19d5bf70830f103"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88c645aea4cb89a1957124dcb079b9aa" id="r_a88c645aea4cb89a1957124dcb079b9aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88c645aea4cb89a1957124dcb079b9aa">failo_ivedimas</a> (vector&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;grupe, istream &amp;is)</td></tr>
-<tr class="memdesc:a88c645aea4cb89a1957124dcb079b9aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nuskaito 'studentas' duomenis iš įvesties failo srauto.  <br /></td></tr>
+<tr class="memdesc:a88c645aea4cb89a1957124dcb079b9aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nuskaito studento duomenis iš įvesties failo srauto.  <br /></td></tr>
 <tr class="separator:a88c645aea4cb89a1957124dcb079b9aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c6ce3570e5aaf8b4770f20751260608" id="r_a1c6ce3570e5aaf8b4770f20751260608"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c6ce3570e5aaf8b4770f20751260608">stud_isskirstymas</a> (const vector&lt; <a class="el" href="classstudentas.html">studentas</a> &gt; &amp;grupe)</td></tr>
-<tr class="memdesc:a1c6ce3570e5aaf8b4770f20751260608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Išskiria 'studentas' objektus į dvi grupes, remiantis jų galutinio pažymio vidurkiu.  <br /></td></tr>
+<tr class="memdesc:a1c6ce3570e5aaf8b4770f20751260608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Išskiria studentus į dvi grupes, remiantis jų galutiniu pažymiu.  <br /></td></tr>
 <tr class="separator:a1c6ce3570e5aaf8b4770f20751260608"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -151,7 +149,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Nuskaito 'studentas' duomenis iš įvesties failo srauto. </p>
+<p>Nuskaito studento duomenis iš įvesties failo srauto. </p>
+<p>Pirmoje eilutėje surašomi stulpelių pavadinimai, iš kurių nustatomas namų darbų pažymių skaičius (nd_count).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">grupe</td><td>Vektorius 'studentas' objektų, kurie bus užpildyti. </td></tr>
@@ -159,8 +158,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="studentas_8cpp_source.html#l00203">203</a> of file <a class="el" href="studentas_8cpp_source.html">studentas.cpp</a>.</p>
 
 </div>
 </div>
@@ -191,8 +188,6 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ostream&amp; Išvesties srauto reference. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="studentas_8cpp_source.html#l00104">104</a> of file <a class="el" href="studentas_8cpp_source.html">studentas.cpp</a>.</p>
-
 </div>
 </div>
 <a id="aa4cfc2d1d601c2fc9fa34031b7cfcbb2" name="aa4cfc2d1d601c2fc9fa34031b7cfcbb2"></a>
@@ -222,8 +217,6 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>istream&amp; Įvesties srauto reference. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="studentas_8cpp_source.html#l00098">98</a> of file <a class="el" href="studentas_8cpp_source.html">studentas.cpp</a>.</p>
-
 </div>
 </div>
 <a id="a1c6ce3570e5aaf8b4770f20751260608" name="a1c6ce3570e5aaf8b4770f20751260608"></a>
@@ -241,15 +234,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Išskiria 'studentas' objektus į dvi grupes, remiantis jų galutinio pažymio vidurkiu. </p>
+<p>Išskiria studentus į dvi grupes, remiantis jų galutiniu pažymiu. </p>
+<p>Studentai, kurių galutinis pažymys (vidurkis) yra mažesnis nei 5, laikomi kartotojais, o likę – išlaikytojais.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">grupe</td><td>Nuolatinė reference į 'studentas' objektų vektorių. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="studentas_8cpp_source.html#l00229">229</a> of file <a class="el" href="studentas_8cpp_source.html">studentas.cpp</a>.</p>
 
 </div>
 </div>

@@ -1,84 +1,98 @@
+#define CATCH_CONFIG_MAIN
+#include "lib/catch_amalgamated.hpp"
 #include "lib/studentas.h"
 #include "lib/isvedimas.h"
 
-int main(int argc, char *argv[])
-{
-     // Default konstruktoriaus testavimas
-     studentas studDefault;
-     cout << "Numatytojo konstruktoriaus testas sekmingas" << endl;
+TEST_CASE("Test konstruktoriu", "[studentas]") {
+    // Testuojame numatytąjį konstruktorių
+    studentas stud_default;
+    // Tikimės, kad vardas ir pavardė yra tušti, o skaičiavimai nenustatyti (galutinės reikšmės 0 arba normalios)
+    REQUIRE(stud_default.vardas() == "");
+    REQUIRE(stud_default.pavarde() == "");
 
-     // Bazines klases testavimas naudojant dynamic_cast
-     if (dynamic_cast<zmogus *>(&studDefault))
-          cout << "Bazines klases paveldejimo testas sekmingas" << endl;
-     else
-          cout << "Bazines klases paveldejimo testas NESEKMINGAS" << endl;
+    // Testuojame parametrizuotą konstruktorių
+    vector<int> pazymiai = {8, 9, 10};
+    studentas stud_param("Jonas", "Jonaitis", pazymiai, 8);
+    REQUIRE(stud_param.vardas() == "Jonas");
+    REQUIRE(stud_param.pavarde() == "Jonaitis");
+    // Tikriname, ar skaičiavimo metodai grąžina reikiamą intervalą
+    REQUIRE(stud_param.galutinis_vidurkis() >= 1);
+    REQUIRE(stud_param.galutinis_vidurkis() <= 10);
+}
 
-     // Parametrinio konstruktoriaus testavimas
-     vector<int> sampleGrades{2, 9, 10};
-     studentas studParam("Jone", "Jonaityte", sampleGrades, 10);
-     cout << "Parametrinio konstruktoriaus testas sekmingas: "
-          << studParam.vardas() << " " << studParam.pavarde() << endl;
+TEST_CASE("Test copy konstruktoriaus", "[studentas]") {
+    // Sukuriame originalų objektą
+    vector<int> pazymiai = {7, 8, 9};
+    studentas originalas("Petras", "Petraitis", pazymiai, 7);
+    // Naudojame copy konstruktorių
+    studentas kopija(originalas);
+    // Patikriname, ar kopija turi tas pačias reikšmes kaip ir originalas
+    REQUIRE(kopija.vardas() == originalas.vardas());
+    REQUIRE(kopija.pavarde() == originalas.pavarde());
+    REQUIRE(kopija.galutinis_vidurkis() == originalas.galutinis_vidurkis());
+    REQUIRE(kopija.galutinis_mediana() == originalas.galutinis_mediana());
+}
 
-     // Kopijavimo konstruktoriaus testavimas
-     studentas studCopyConstructed(studParam);
-     cout << "Kopijavimo konstruktoriaus testas sekmingas: "
-          << studCopyConstructed.vardas() << " " << studCopyConstructed.pavarde() << endl;
+TEST_CASE("Test copy priskyrimo operatoriaus", "[studentas]") {
+    vector<int> pazymiai = {6, 7, 8};
+    studentas originalas("Ona", "Onaitė", pazymiai, 6);
+    studentas kopija;
+    kopija = originalas;
+    // Patikriname, ar priskyrimas perkopijavo reikšmes
+    REQUIRE(kopija.vardas() == originalas.vardas());
+    REQUIRE(kopija.pavarde() == originalas.pavarde());
+    REQUIRE(kopija.galutinis_vidurkis() == originalas.galutinis_vidurkis());
+    REQUIRE(kopija.galutinis_mediana() == originalas.galutinis_mediana());
+}
 
-     // Perkelimo konstruktoriaus testavimas
-     studentas studMoveConstructed(move(studParam));
-     cout << "Perkelimo konstruktoriaus testas sekmingas: "
-          << studMoveConstructed.vardas() << " " << studMoveConstructed.pavarde() << endl;
+TEST_CASE("Test move konstruktoriaus", "[studentas]") {
+    vector<int> pazymiai = {5, 5, 5};
+    studentas originalas("Ieva", "Ievaitė", pazymiai, 5);
+    double vidurkis_original = originalas.galutinis_vidurkis();
+    double mediana_original = originalas.galutinis_mediana();
 
-     // Kopijavimo priskyrimo testavimas
-     studentas studCopyAssigned;
-     studCopyAssigned = studCopyConstructed;
-     cout << "Kopijavimo priskyrimo testas sekmingas: "
-          << studCopyAssigned.vardas() << " " << studCopyAssigned.pavarde() << endl;
+    // Naudojame move konstruktorių; originalas perdedamas į naują objektą
+    studentas perkelta(move(originalas));
+    REQUIRE(perkelta.vardas() == "Ieva");
+    REQUIRE(perkelta.pavarde() == "Ievaitė");
+    REQUIRE(perkelta.galutinis_vidurkis() == vidurkis_original);
+    REQUIRE(perkelta.galutinis_mediana() == mediana_original);
+    // Originalo turinys po move gali būti tuščias ar nulinis pagal implementaciją
+    REQUIRE(originalas.vardas() == "");
+    REQUIRE(originalas.pavarde() == "");
+    REQUIRE(originalas.galutinis_vidurkis() == 0);
+    REQUIRE(originalas.galutinis_mediana() == 0);
+}
 
-     // Perkelimo priskyrimo testavimas
-     studentas studMoveAssigned;
-     studMoveAssigned = move(studMoveConstructed);
-     cout << "Perkelimo priskyrimo testas sekmingas: "
-          << studMoveAssigned.vardas() << " " << studMoveAssigned.pavarde() << endl;
+TEST_CASE("Test move priskyrimo operatoriaus", "[studentas]") {
+    vector<int> pazymiai = {4, 4, 4};
+    studentas originalas("Andrius", "Andraitis", pazymiai, 4);
+    double vidurkis_original = originalas.galutinis_vidurkis();
+    double mediana_original = originalas.galutinis_mediana();
+    studentas perkelta;
+    perkelta = move(originalas);
+    REQUIRE(perkelta.vardas() == "Andrius");
+    REQUIRE(perkelta.pavarde() == "Andraitis");
+    REQUIRE(perkelta.galutinis_vidurkis() == vidurkis_original);
+    REQUIRE(perkelta.galutinis_mediana() == mediana_original);
 
-     // Ivedimo metodu testavimas (naudojant stringstream)
-     {
-          std::stringstream inputMock("Jonas Jonaitis 2 9 10 7");
-          studentas studInput;
-          studInput.paz_ivedimas(inputMock, 3);
-          cout << "Ivedimo metodu testas sekmingas: "
-               << studInput.vardas() << " " << studInput.pavarde() << endl;
-     }
+    // Patikrinkite originalaus objekto būklę po perkėlimo
+    REQUIRE(originalas.vardas() == "");
+    REQUIRE(originalas.pavarde() == "");
+    REQUIRE(originalas.galutinis_vidurkis() == 0);
+    REQUIRE(originalas.galutinis_mediana() == 0);
+    REQUIRE(perkelta.vardas() == "Andrius");
+    REQUIRE(perkelta.pavarde() == "Andraitis");
+    REQUIRE(perkelta.galutinis_vidurkis() == vidurkis_original);
+    REQUIRE(perkelta.galutinis_mediana() == mediana_original);
+}
 
-     // Isvedimo metodu testavimas (galutinis pazymys)
-     studCopyAssigned.calc_gal_mediana();
-     studCopyAssigned.calc_gal_vidurkis();
-
-     cout << "Galutinis vidurkis: " << studCopyAssigned.galutinis_vidurkis() << endl;
-     cout << "Galutine mediana: " << studCopyAssigned.galutinis_mediana() << endl;
-     cout << "Isvedimo metodu testas sekmingas" << endl;
-
-     // Operator>> overload test
-     {
-          stringstream inputOp("Petras Petraitis 7");
-          studentas studOp;
-          inputOp >> studOp;
-          cout << "Operator>> testas sekmingas: "
-               << studOp.vardas() << " " << studOp.pavarde() << endl;
-     }
-
-     // Operator<< overload test
-     {
-          vector<int> sampleGradesTest{5, 7, 9};
-          studentas studOut("Antanas", "Antanaitis", sampleGradesTest, 8);
-          studOut.calc_gal_vidurkis();
-          studOut.calc_gal_mediana();
-          stringstream outputMock;
-          outputMock << studOut;
-          cout << "Operator<< testas sekmingas. Isvedimo rezultatas:" << endl
-               << outputMock.str();
-     }
-
-     // Destruktoriaus testas
-     cout << "Destruktoriaus testas (bus iskviestas automatiskai pabaigoje)" << endl;
+TEST_CASE("Test destruktoriaus", "[studentas]") {
+    // Testuojama, kad destruktorius veikia be klaidų sunaikinant objektus
+    {
+        studentas stud("Simonas", "Simonaitis", vector<int>{10, 9, 8}, 10);
+        REQUIRE(stud.vardas() == "Simonas");
+        // Objektas bus automatiškai sunaikintas pasibaigus blokui, destruktorius turi tvarkingai išvalyti objektą
+    }
+    // Jei destruktorius sukelia problemų, testas bus nesėkmingas
 }

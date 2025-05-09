@@ -55,7 +55,7 @@ studentas::studentas(studentas &&other) noexcept
       paz(move(other.paz)),
       egz(move(other.egz)),
       galutinisVid(move(other.galutinisVid)),
-      galutinisMed(move(other.galutinisMed)) {}
+      galutinisMed(move(other.galutinisMed)) { other.~studentas(); }
 
 studentas &studentas::operator=(const studentas &other)
 {
@@ -83,7 +83,7 @@ studentas &studentas::operator=(studentas &&other) noexcept
     egz = move(other.egz);
     galutinisVid = move(other.galutinisVid);
     galutinisMed = move(other.galutinisMed);
-
+    other.~studentas();
     return *this;
 }
 
