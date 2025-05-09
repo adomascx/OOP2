@@ -1,4 +1,4 @@
-<map id="src/bibliotekos/main_lib.cpp" name="src/bibliotekos/main_lib.cpp">
+<map id="src/lib/main_lib.cpp" name="src/lib/main_lib.cpp">
 <area shape="rect" id="Node000001" title=" " alt="" coords="474,5,612,48"/>
 <area shape="rect" id="Node000002" href="$main__lib_8h.html" title=" " alt="" coords="503,96,583,123"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="546,49,546,80,540,80,540,49"/>

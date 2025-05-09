@@ -1,4 +1,4 @@
-<map id="src/bibliotekos/main_lib.h" name="src/bibliotekos/main_lib.h">
+<map id="src/lib/main_lib.h" name="src/lib/main_lib.h">
 <area shape="rect" id="Node000001" title=" " alt="" coords="474,5,612,48"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,96,84,123"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="475,39,308,63,100,98,99,93,307,58,474,34"/>
