@@ -25,6 +25,15 @@ void rez_isvedimas(ostream &os, char choice_mediana, const vector<studentas> &gr
 void failo_generavimas(string gen_file, int paz_sk, int dydis)
 {
     timer_prad();
+
+    // jei nera dir, sukuriame
+    path file_path(gen_file);
+    path dir = file_path.parent_path();
+    if (!exists(dir))
+    {
+        create_directories(dir);
+    }
+
     ofstream fr(gen_file);
     if (!fr)
         throw runtime_error("Nepavyko sukurti " + gen_file + " failo");

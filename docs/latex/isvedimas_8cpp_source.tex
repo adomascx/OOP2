@@ -1,0 +1,69 @@
+\doxysection{isvedimas.\+cpp}
+\hypertarget{isvedimas_8cpp_source}{}\label{isvedimas_8cpp_source}\index{src/lib/isvedimas.cpp@{src/lib/isvedimas.cpp}}
+\mbox{\hyperlink{isvedimas_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{isvedimas_8h}{isvedimas.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00003}\mbox{\hyperlink{isvedimas_8cpp_a0b313c333104768d7183fb504f4740f9}{00003}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{isvedimas_8cpp_a0b313c333104768d7183fb504f4740f9}{rez\_isvedimas}}(ostream\ \&os,\ \textcolor{keywordtype}{char}\ choice\_mediana,\ \textcolor{keyword}{const}\ vector<studentas>\ \&grupe)}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00005}00005\ \ \ \ \ os\ <<\ setw(15)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ <<\ setw(15)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}}}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ <<\ setw(18)\ <<\ \textcolor{stringliteral}{"{}Galutinis\ (Vid.)"{}};}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (choice\_mediana\ ==\ \textcolor{charliteral}{'y'})}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}/\ "{}}\ <<\ setw(20)\ <<\ \textcolor{stringliteral}{"{}Galutinis\ (Med.)"{}};}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00010}00010\ \ \ \ \ os\ <<\ endl}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ <<\ string(75,\ \textcolor{charliteral}{'-\/'})\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&i\ :\ grupe)}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ os\ <<\ setw(15)\ <<\ left\ <<\ i.vardas()}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(15)\ <<\ i.pavarde()}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ <<\ fixed\ <<\ setprecision(3)\ <<\ setw(20)}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ <<\ i.galutinis\_vidurkis()\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (choice\_mediana\ ==\ \textcolor{charliteral}{'y'})}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ i.galutinis\_mediana()\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ os\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00025}\mbox{\hyperlink{isvedimas_8cpp_aa3efccaf856408a0180c17fe85395617}{00025}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{isvedimas_8cpp_aa3efccaf856408a0180c17fe85395617}{failo\_generavimas}}(\textcolor{keywordtype}{string}\ gen\_file,\ \textcolor{keywordtype}{int}\ paz\_sk,\ \textcolor{keywordtype}{int}\ dydis)}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{main__lib_8cpp_a766d74fc511097d8ba71a6cc3f3d03f9}{timer\_prad}}();}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ jei\ nera\ dir,\ sukuriame}}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00030}00030\ \ \ \ \ path\ file\_path(gen\_file);}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00031}00031\ \ \ \ \ path\ dir\ =\ file\_path.parent\_path();}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (!exists(dir))}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ create\_directories(dir);}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00037}00037\ \ \ \ \ ofstream\ fr(gen\_file);}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (!fr)}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ runtime\_error(\textcolor{stringliteral}{"{}Nepavyko\ sukurti\ "{}}\ +\ gen\_file\ +\ \textcolor{stringliteral}{"{}\ failo"{}});}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ antraste}}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00042}00042\ \ \ \ \ fr\ <<\ setw(15)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}\ <<\ setw(15)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}};}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ paz\_sk;\ i++)}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ fr\ <<\ left\ <<\ setw(5)\ <<\ \textcolor{stringliteral}{"{}ND"{}}\ +\ to\_string(i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00047}00047\ \ \ \ \ fr\ <<\ setw(5)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}EGZ"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ studentu\ generavimas}}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ dydis;\ i++)}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00051}00051\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ fr\ <<\ setw(15)\ <<\ left\ <<\ \textcolor{stringliteral}{"{}Vardas"{}}\ +\ to\_string(i\ +\ 1)}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ <<\ setw(15)\ <<\ \textcolor{stringliteral}{"{}Pavarde"{}}\ +\ to\_string(i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ paz\_sk\ +\ 1;\ j++)}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ fr\ <<\ left\ <<\ setw(5)\ <<\ (rand()\ \%\ 10)\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ fr\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00060}00060\ \ \ \ \ fr.close();}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{main__lib_8cpp_a0eb84a25e11284efdf6be832f7b5997c}{timer\_pab}}(\textcolor{stringliteral}{"{}failo\ generavimas"{}});}
+\DoxyCodeLine{\Hypertarget{isvedimas_8cpp_source_l00063}00063\ \}}
+
+\end{DoxyCode}

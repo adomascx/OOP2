@@ -21,11 +21,18 @@ studentas::studentas()
 };
 
 studentas::studentas(const string &vardas, const string &pavarde, const vector<int> &paz, const int &egzaminas)
-    : zmogus(vardas, pavarde), paz(paz), egz(egzaminas) {}
+    : zmogus(vardas, pavarde), paz(paz), egz(egzaminas)
+{
+    calc_gal_vidurkis();
+    calc_gal_mediana();
+}
 
 studentas::studentas(istream &is, int nd_count)
 {
     paz_ivedimas(is, nd_count);
+
+    calc_gal_vidurkis();
+    calc_gal_mediana();
 };
 
 studentas::studentas(const studentas &other)
@@ -38,9 +45,9 @@ studentas::studentas(const studentas &other)
 studentas::studentas(studentas &&other) noexcept
     : zmogus(move(other.var), move(other.pav)),
       paz(move(other.paz)),
-      egz(other.egz),
-      galutinisVid(other.galutinisVid),
-      galutinisMed(other.galutinisMed) {}
+      egz(move(other.egz)),
+      galutinisVid(move(other.galutinisVid)),
+      galutinisMed(move(other.galutinisMed)) {}
 
 studentas &studentas::operator=(const studentas &other)
 {
@@ -65,21 +72,26 @@ studentas &studentas::operator=(studentas &&other) noexcept
     var = move(other.var);
     pav = move(other.pav);
     paz = move(other.paz);
-    egz = other.egz;
-    galutinisVid = other.galutinisVid;
-    galutinisMed = other.galutinisMed;
+    egz = move(other.egz);
+    galutinisVid = move(other.galutinisVid);
+    galutinisMed = move(other.galutinisMed);
 
     return *this;
 }
 
 istream &studentas::paz_ivedimas(istream &is, int nd_count)
 {
-    int pazymys;
+    is >> var >> pav;
+
     for (int i = 0; i < nd_count; i++)
     {
+        int pazymys;
         is >> pazymys;
         paz.push_back(pazymys);
     }
+
+    is >> egz;
+
     return is;
 };
 
@@ -201,7 +213,8 @@ void failo_ivedimas(vector<studentas> &grupe, istream &is)
     nd_count -= 3;
 
     timer_prad();
-    cout << endl << "Ivedami duomenys..." << endl;
+    cout << endl
+         << "Ivedami duomenys..." << endl;
 
     while (getline(is, line))
     {
@@ -230,13 +243,13 @@ void stud_isskirstymas(const vector<studentas> &grupe)
     timer_pab("Studentu isskirstymas");
 
     timer_prad();
-    ofstream fr_k("teksto_failai/kartotojai.txt");
+    ofstream fr_k("txt/kartotojai.txt");
     if (!fr_k)
         throw runtime_error("Nepavyko atidaryti kartotoju failo");
     rez_isvedimas(fr_k, 'n', kartotojai);
     fr_k.close();
 
-    ofstream fr_i("teksto_failai/islaikytojai.txt");
+    ofstream fr_i("txt/islaikytojai.txt");
     if (!fr_i)
         throw runtime_error("Nepavyko atidaryti islaikytojui failo");
     rez_isvedimas(fr_i, 'n', temp);

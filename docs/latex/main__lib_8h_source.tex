@@ -2,68 +2,73 @@
 \hypertarget{main__lib_8h_source}{}\label{main__lib_8h_source}\index{src/lib/main\_lib.h@{src/lib/main\_lib.h}}
 \mbox{\hyperlink{main__lib_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
-\DoxyCodeLine{00004\ \textcolor{keyword}{using\ }std::runtime\_error;}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00007\ \textcolor{keyword}{using\ }std::vector;}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00010\ \textcolor{keyword}{using\ }std::cin;}
-\DoxyCodeLine{00011\ \textcolor{keyword}{using\ }std::cout;}
-\DoxyCodeLine{00012\ \textcolor{keyword}{using\ }std::endl;}
-\DoxyCodeLine{00013\ \textcolor{keyword}{using\ }std::istream;}
-\DoxyCodeLine{00014\ \textcolor{keyword}{using\ }std::ostream;}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <iomanip>}}
-\DoxyCodeLine{00017\ \textcolor{keyword}{using\ }std::fixed;}
-\DoxyCodeLine{00018\ \textcolor{keyword}{using\ }std::left;}
-\DoxyCodeLine{00019\ \textcolor{keyword}{using\ }std::setprecision;}
-\DoxyCodeLine{00020\ \textcolor{keyword}{using\ }std::setw;}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <algorithm>}}
-\DoxyCodeLine{00023\ \textcolor{keyword}{using\ }std::find\_if;}
-\DoxyCodeLine{00024\ \textcolor{keyword}{using\ }std::nth\_element;}
-\DoxyCodeLine{00025\ \textcolor{keyword}{using\ }std::sort;}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00028\ \textcolor{keyword}{using\ }std::string;}
-\DoxyCodeLine{00029\ \textcolor{keyword}{using\ }std::to\_string;}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <sstream>}}
-\DoxyCodeLine{00032\ \textcolor{keyword}{using\ }std::istringstream;}
-\DoxyCodeLine{00033\ \textcolor{keyword}{using\ }std::stringstream;}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <fstream>}}
-\DoxyCodeLine{00036\ \textcolor{keyword}{using\ }std::ifstream;}
-\DoxyCodeLine{00037\ \textcolor{keyword}{using\ }std::ofstream;}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <chrono>}}
-\DoxyCodeLine{00040\ \textcolor{keyword}{using\ }std::chrono::duration;}
-\DoxyCodeLine{00041\ \textcolor{keyword}{using\ }std::chrono::duration\_cast;}
-\DoxyCodeLine{00042\ \textcolor{keyword}{using\ }std::chrono::high\_resolution\_clock;}
-\DoxyCodeLine{00043\ \textcolor{keyword}{using\ }std::chrono::milliseconds;}
-\DoxyCodeLine{00044\ \textcolor{keyword}{using\ }std::chrono::time\_point;}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <conio.h>}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <iterator>}}
-\DoxyCodeLine{00049\ \textcolor{keyword}{using\ }std::make\_move\_iterator;}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <utility>}}
-\DoxyCodeLine{00052\ \textcolor{keyword}{using\ }std::move;}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ output\_file[]\ =\ \textcolor{stringliteral}{"{}teksto\_failai/rezultatai.txt"{}};\ \textcolor{comment}{//\ failo,\ į\ kurį\ išvedami\ rezultatų\ duomenys,\ direktorija/pavadinimas}}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{main__lib_8cpp_adbbdab5e302a416ca050337d54457d12}{ar\_skaiciuoti\_laika}};}
-\DoxyCodeLine{00057\ \textcolor{keyword}{extern}\ time\_point<high\_resolution\_clock>\ \mbox{\hyperlink{main__lib_8cpp_ab5bf5d57253e3d2b144be48504b74eda}{pradzios\_laikas}};}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{main__lib_8cpp_a91b73a65106c378002a02092e5c565aa}{vardai}}[];}
-\DoxyCodeLine{00060\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{main__lib_8cpp_a3708c616f0cfb643dd7bc5c008e09d78}{pavardes}}[];}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main__lib_8h_a766d74fc511097d8ba71a6cc3f3d03f9}{timer\_prad}}();}
-\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main__lib_8h_a0eb84a25e11284efdf6be832f7b5997c}{timer\_pab}}(\textcolor{keywordtype}{string}\ operacija);}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00004}00004\ \textcolor{keyword}{using\ }std::runtime\_error;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00007}00007\ \textcolor{keyword}{using\ }std::vector;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00010}00010\ \textcolor{keyword}{using\ }std::cin;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00011}00011\ \textcolor{keyword}{using\ }std::cout;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00012}00012\ \textcolor{keyword}{using\ }std::endl;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00013}00013\ \textcolor{keyword}{using\ }std::istream;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00014}00014\ \textcolor{keyword}{using\ }std::ostream;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00017}00017\ \textcolor{keyword}{using\ }std::fixed;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00018}00018\ \textcolor{keyword}{using\ }std::left;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00019}00019\ \textcolor{keyword}{using\ }std::setprecision;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00020}00020\ \textcolor{keyword}{using\ }std::setw;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00023}00023\ \textcolor{keyword}{using\ }std::find\_if;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00024}00024\ \textcolor{keyword}{using\ }std::nth\_element;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00025}00025\ \textcolor{keyword}{using\ }std::sort;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00027}00027\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00028}00028\ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00029}00029\ \textcolor{keyword}{using\ }std::to\_string;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00032}00032\ \textcolor{keyword}{using\ }std::istringstream;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00033}00033\ \textcolor{keyword}{using\ }std::stringstream;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00036}00036\ \textcolor{keyword}{using\ }std::ifstream;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00037}00037\ \textcolor{keyword}{using\ }std::ofstream;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00040}00040\ \textcolor{keyword}{using\ }std::chrono::duration;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00041}00041\ \textcolor{keyword}{using\ }std::chrono::duration\_cast;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00042}00042\ \textcolor{keyword}{using\ }std::chrono::high\_resolution\_clock;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00043}00043\ \textcolor{keyword}{using\ }std::chrono::milliseconds;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00044}00044\ \textcolor{keyword}{using\ }std::chrono::time\_point;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00046}00046\ \textcolor{preprocessor}{\#include\ <conio.h>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00048}00048\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00049}00049\ \textcolor{keyword}{using\ }std::make\_move\_iterator;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00051}00051\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00052}00052\ \textcolor{keyword}{using\ }std::move;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00054}00054\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00055}00055\ \textcolor{keyword}{using\ }std::filesystem::path;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00056}00056\ \textcolor{keyword}{using\ }std::filesystem::exists;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00057}00057\ \textcolor{keyword}{using\ }std::filesystem::create\_directories;}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00059}00059\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ output\_file[]\ =\ \textcolor{stringliteral}{"{}txt/rezultatai.txt"{}};\ \textcolor{comment}{//\ failo,\ į\ kurį\ išvedami\ rezultatų\ duomenys,\ direktorija/pavadinimas}}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00061}00061\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{main__lib_8cpp_adbbdab5e302a416ca050337d54457d12}{ar\_skaiciuoti\_laika}};}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00062}00062\ \textcolor{keyword}{extern}\ time\_point<high\_resolution\_clock>\ \mbox{\hyperlink{main__lib_8cpp_ab5bf5d57253e3d2b144be48504b74eda}{pradzios\_laikas}};}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00064}00064\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{main__lib_8cpp_a91b73a65106c378002a02092e5c565aa}{vardai}}[];}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00065}00065\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{main__lib_8cpp_a3708c616f0cfb643dd7bc5c008e09d78}{pavardes}}[];}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00067}00067\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main__lib_8h_a766d74fc511097d8ba71a6cc3f3d03f9}{timer\_prad}}();}
+\DoxyCodeLine{\Hypertarget{main__lib_8h_source_l00068}00068\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main__lib_8h_a0eb84a25e11284efdf6be832f7b5997c}{timer\_pab}}(\textcolor{keywordtype}{string}\ operacija);}
 
 \end{DoxyCode}

@@ -1,0 +1,90 @@
+\doxysection{class\+\_\+test.\+cpp}
+\hypertarget{class__test_8cpp_source}{}\label{class__test_8cpp_source}\index{src/class\_test.cpp@{src/class\_test.cpp}}
+\mbox{\hyperlink{class__test_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{studentas_8h}{lib/studentas.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{isvedimas_8h}{lib/isvedimas.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00004}\mbox{\hyperlink{class__test_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00004}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_o_o_p2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00006}00006\ \ \ \ \ \ \textcolor{comment}{//\ Default\ konstruktoriaus\ testavimas}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00007}00007\ \ \ \ \ \ \mbox{\hyperlink{classstudentas}{studentas}}\ studDefault;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00008}00008\ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Numatytojo\ konstruktoriaus\ testas\ sekmingas"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00010}00010\ \ \ \ \ \ \textcolor{comment}{//\ Bazines\ klases\ testavimas\ naudojant\ dynamic\_cast}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00011}00011\ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classzmogus}{zmogus}}\ *\textcolor{keyword}{>}(\&studDefault))}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Bazines\ klases\ paveldejimo\ testas\ sekmingas"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00013}00013\ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Bazines\ klases\ paveldejimo\ testas\ NESEKMINGAS"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00016}00016\ \ \ \ \ \ \textcolor{comment}{//\ Parametrinio\ konstruktoriaus\ testavimas}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00017}00017\ \ \ \ \ \ vector<int>\ sampleGrades\{2,\ 9,\ 10\};}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00018}00018\ \ \ \ \ \ \mbox{\hyperlink{classstudentas}{studentas}}\ studParam(\textcolor{stringliteral}{"{}Jone"{}},\ \textcolor{stringliteral}{"{}Jonaityte"{}},\ sampleGrades,\ 10);}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00019}00019\ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Parametrinio\ konstruktoriaus\ testas\ sekmingas:\ "{}}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ <<\ studParam.\mbox{\hyperlink{classstudentas_a0b7de58abe8eee12adb5da298d3c7e6a}{vardas}}()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ studParam.\mbox{\hyperlink{classstudentas_a67db291a53b86c2a703ddfbe35c564f9}{pavarde}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00022}00022\ \ \ \ \ \ \textcolor{comment}{//\ Kopijavimo\ konstruktoriaus\ testavimas}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00023}00023\ \ \ \ \ \ \mbox{\hyperlink{classstudentas}{studentas}}\ studCopyConstructed(studParam);}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00024}00024\ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Kopijavimo\ konstruktoriaus\ testas\ sekmingas:\ "{}}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ <<\ studCopyConstructed.\mbox{\hyperlink{classstudentas_a0b7de58abe8eee12adb5da298d3c7e6a}{vardas}}()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ studCopyConstructed.\mbox{\hyperlink{classstudentas_a67db291a53b86c2a703ddfbe35c564f9}{pavarde}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00027}00027\ \ \ \ \ \ \textcolor{comment}{//\ Perkelimo\ konstruktoriaus\ testavimas}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00028}00028\ \ \ \ \ \ \mbox{\hyperlink{classstudentas}{studentas}}\ studMoveConstructed(move(studParam));}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00029}00029\ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Perkelimo\ konstruktoriaus\ testas\ sekmingas:\ "{}}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ <<\ studMoveConstructed.\mbox{\hyperlink{classstudentas_a0b7de58abe8eee12adb5da298d3c7e6a}{vardas}}()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ studMoveConstructed.\mbox{\hyperlink{classstudentas_a67db291a53b86c2a703ddfbe35c564f9}{pavarde}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00032}00032\ \ \ \ \ \ \textcolor{comment}{//\ Kopijavimo\ priskyrimo\ testavimas}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00033}00033\ \ \ \ \ \ \mbox{\hyperlink{classstudentas}{studentas}}\ studCopyAssigned;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00034}00034\ \ \ \ \ \ studCopyAssigned\ =\ studCopyConstructed;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00035}00035\ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Kopijavimo\ priskyrimo\ testas\ sekmingas:\ "{}}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ <<\ studCopyAssigned.\mbox{\hyperlink{classstudentas_a0b7de58abe8eee12adb5da298d3c7e6a}{vardas}}()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ studCopyAssigned.\mbox{\hyperlink{classstudentas_a67db291a53b86c2a703ddfbe35c564f9}{pavarde}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00038}00038\ \ \ \ \ \ \textcolor{comment}{//\ Perkelimo\ priskyrimo\ testavimas}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00039}00039\ \ \ \ \ \ \mbox{\hyperlink{classstudentas}{studentas}}\ studMoveAssigned;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00040}00040\ \ \ \ \ \ studMoveAssigned\ =\ move(studMoveConstructed);}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00041}00041\ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Perkelimo\ priskyrimo\ testas\ sekmingas:\ "{}}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ <<\ studMoveAssigned.\mbox{\hyperlink{classstudentas_a0b7de58abe8eee12adb5da298d3c7e6a}{vardas}}()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ studMoveAssigned.\mbox{\hyperlink{classstudentas_a67db291a53b86c2a703ddfbe35c564f9}{pavarde}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00044}00044\ \ \ \ \ \ \textcolor{comment}{//\ Ivedimo\ metodu\ testavimas\ (naudojant\ stringstream)}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00045}00045\ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ std::stringstream\ inputMock(\textcolor{stringliteral}{"{}Jonas\ Jonaitis\ 2\ 9\ 10\ 7"{}});}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classstudentas}{studentas}}\ studInput;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ studInput.\mbox{\hyperlink{classstudentas_a16cbea51bb5cb8b8e93920b998dfcd0c}{paz\_ivedimas}}(inputMock,\ 3);}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ivedimo\ metodu\ testas\ sekmingas:\ "{}}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ studInput.\mbox{\hyperlink{classstudentas_a0b7de58abe8eee12adb5da298d3c7e6a}{vardas}}()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ studInput.\mbox{\hyperlink{classstudentas_a67db291a53b86c2a703ddfbe35c564f9}{pavarde}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00051}00051\ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00053}00053\ \ \ \ \ \ \textcolor{comment}{//\ Isvedimo\ metodu\ testavimas\ (galutinis\ pazymys)}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00054}00054\ \ \ \ \ \ studCopyAssigned.\mbox{\hyperlink{classstudentas_a25d3206fbf8e460cdb575f133b4e2507}{calc\_gal\_mediana}}();}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00055}00055\ \ \ \ \ \ studCopyAssigned.\mbox{\hyperlink{classstudentas_a540a17f8b28f8435c689b4206df24e81}{calc\_gal\_vidurkis}}();}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00057}00057\ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Galutinis\ vidurkis:\ "{}}\ <<\ studCopyAssigned.\mbox{\hyperlink{classstudentas_a690817b21b17f7d050bbc350468565d2}{galutinis\_vidurkis}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00058}00058\ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Galutine\ mediana:\ "{}}\ <<\ studCopyAssigned.\mbox{\hyperlink{classstudentas_a141532764fda3f468b3171845bf7ae8f}{galutinis\_mediana}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00059}00059\ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Isvedimo\ metodu\ testas\ sekmingas"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00061}00061\ \ \ \ \ \ \textcolor{comment}{//\ Operator>>\ overload\ test}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00062}00062\ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ stringstream\ inputOp(\textcolor{stringliteral}{"{}Petras\ Petraitis\ 7"{}});}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classstudentas}{studentas}}\ studOp;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ inputOp\ >>\ studOp;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Operator>>\ testas\ sekmingas:\ "{}}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ studOp.\mbox{\hyperlink{classstudentas_a0b7de58abe8eee12adb5da298d3c7e6a}{vardas}}()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ studOp.\mbox{\hyperlink{classstudentas_a67db291a53b86c2a703ddfbe35c564f9}{pavarde}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00068}00068\ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00070}00070\ \ \ \ \ \ \textcolor{comment}{//\ Operator<<\ overload\ test}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00071}00071\ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ vector<int>\ sampleGradesTest\{5,\ 7,\ 9\};}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classstudentas}{studentas}}\ studOut(\textcolor{stringliteral}{"{}Antanas"{}},\ \textcolor{stringliteral}{"{}Antanaitis"{}},\ sampleGradesTest,\ 8);}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ studOut.\mbox{\hyperlink{classstudentas_a540a17f8b28f8435c689b4206df24e81}{calc\_gal\_vidurkis}}();}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ studOut.\mbox{\hyperlink{classstudentas_a25d3206fbf8e460cdb575f133b4e2507}{calc\_gal\_mediana}}();}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ stringstream\ outputMock;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ outputMock\ <<\ studOut;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Operator<<\ testas\ sekmingas.\ Isvedimo\ rezultatas:"{}}\ <<\ endl}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ outputMock.str();}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00080}00080\ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00082}00082\ \ \ \ \ \ \textcolor{comment}{//\ Destruktoriaus\ testas}}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00083}00083\ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Destruktoriaus\ testas\ (bus\ iskviestas\ automatiskai\ pabaigoje)"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{class__test_8cpp_source_l00084}00084\ \}}
+
+\end{DoxyCode}

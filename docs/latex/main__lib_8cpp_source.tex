@@ -1,0 +1,33 @@
+\doxysection{main\+\_\+lib.\+cpp}
+\hypertarget{main__lib_8cpp_source}{}\label{main__lib_8cpp_source}\index{src/lib/main\_lib.cpp@{src/lib/main\_lib.cpp}}
+\mbox{\hyperlink{main__lib_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{main__lib_8h}{main\_lib.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00003}\mbox{\hyperlink{main__lib_8cpp_adbbdab5e302a416ca050337d54457d12}{00003}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{main__lib_8cpp_adbbdab5e302a416ca050337d54457d12}{ar\_skaiciuoti\_laika}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ testavimo\ rezimas}}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00004}\mbox{\hyperlink{main__lib_8cpp_ab5bf5d57253e3d2b144be48504b74eda}{00004}}\ time\_point<high\_resolution\_clock>\ \mbox{\hyperlink{main__lib_8cpp_ab5bf5d57253e3d2b144be48504b74eda}{pradzios\_laikas}};\ \textcolor{comment}{//\ laiko\ matavimo\ funkcijos\ pradzios\ laikas}}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00006}\mbox{\hyperlink{main__lib_8cpp_a91b73a65106c378002a02092e5c565aa}{00006}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{main__lib_8cpp_a91b73a65106c378002a02092e5c565aa}{vardai}}[]\ =\ \{\textcolor{stringliteral}{"{}Adomas"{}},\ \textcolor{stringliteral}{"{}Julius"{}},\ \textcolor{stringliteral}{"{}Mantas"{}},\ \textcolor{stringliteral}{"{}Lukas"{}},\ \textcolor{stringliteral}{"{}Dominykas"{}},\ \textcolor{stringliteral}{"{}Tomas"{}},\ \textcolor{stringliteral}{"{}Jonas"{}},\ \textcolor{stringliteral}{"{}Paulius"{}},\ \textcolor{stringliteral}{"{}Dovydas"{}},\ \textcolor{stringliteral}{"{}Karolis"{}},\ \textcolor{stringliteral}{"{}Rokas"{}},\ \textcolor{stringliteral}{"{}Simonas"{}},\ \textcolor{stringliteral}{"{}Martynas"{}},\ \textcolor{stringliteral}{"{}Arnas"{}},\ \textcolor{stringliteral}{"{}Justas"{}},\ \textcolor{stringliteral}{"{}Vilius"{}}\};}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00007}\mbox{\hyperlink{main__lib_8cpp_a3708c616f0cfb643dd7bc5c008e09d78}{00007}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{main__lib_8cpp_a3708c616f0cfb643dd7bc5c008e09d78}{pavardes}}[]\ =\ \{\textcolor{stringliteral}{"{}Kazlauskas"{}},\ \textcolor{stringliteral}{"{}Petrauskas"{}},\ \textcolor{stringliteral}{"{}Jankauskas"{}},\ \textcolor{stringliteral}{"{}Stankevicius"{}},\ \textcolor{stringliteral}{"{}Butkus"{}},\ \textcolor{stringliteral}{"{}Paulauskas"{}},\ \textcolor{stringliteral}{"{}Urbonas"{}},\ \textcolor{stringliteral}{"{}Vasiliauskas"{}},\ \textcolor{stringliteral}{"{}Lukosevicius"{}},\ \textcolor{stringliteral}{"{}Simkus"{}},\ \textcolor{stringliteral}{"{}Brazaitis"{}},\ \textcolor{stringliteral}{"{}Kavaliauskas"{}},\ \textcolor{stringliteral}{"{}Mikalauskas"{}},\ \textcolor{stringliteral}{"{}Navickas"{}},\ \textcolor{stringliteral}{"{}Rimkus"{}},\ \textcolor{stringliteral}{"{}Zukauskas"{}}\};}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00009}00009\ \textcolor{comment}{//\ laiko\ skaiciavimo\ pradzios\ funkcija}}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00010}\mbox{\hyperlink{main__lib_8cpp_a766d74fc511097d8ba71a6cc3f3d03f9}{00010}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main__lib_8cpp_a766d74fc511097d8ba71a6cc3f3d03f9}{timer\_prad}}()}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{main__lib_8cpp_adbbdab5e302a416ca050337d54457d12}{ar\_skaiciuoti\_laika}})}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main__lib_8cpp_ab5bf5d57253e3d2b144be48504b74eda}{pradzios\_laikas}}\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00018}00018\ \textcolor{comment}{//\ laiko\ skaiciavimo\ pabaigos\ funkcija.\ argumentas\ 'operacija'\ yra\ vykdomos\ operacijos\ pavadinimas}}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00019}\mbox{\hyperlink{main__lib_8cpp_a0eb84a25e11284efdf6be832f7b5997c}{00019}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main__lib_8cpp_a0eb84a25e11284efdf6be832f7b5997c}{timer\_pab}}(\textcolor{keywordtype}{string}\ operacija)}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{main__lib_8cpp_adbbdab5e302a416ca050337d54457d12}{ar\_skaiciuoti\_laika}})}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ pabaigos\_laikas\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ duration\ =\ duration\_cast<milliseconds>(pabaigos\_laikas\ -\/\ \mbox{\hyperlink{main__lib_8cpp_ab5bf5d57253e3d2b144be48504b74eda}{pradzios\_laikas}});}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ operacija\ <<\ \textcolor{stringliteral}{"{}\ uztruko:\ "{}}\ <<\ duration.count()\ <<\ \textcolor{stringliteral}{"{}\ ms]"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__lib_8cpp_source_l00027}00027\ \}}
+
+\end{DoxyCode}

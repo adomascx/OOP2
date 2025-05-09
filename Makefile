@@ -7,9 +7,9 @@ all: test_time test_class main
 clean:
 	del build\
 
-main: $(CLASS_DIR)/OOP1.cpp $(wildcard $(CLASS_DIR)/lib/*.cpp)
+main: $(CLASS_DIR)/OOP2.cpp $(wildcard $(CLASS_DIR)/lib/*.cpp)
 	if not exist build mkdir build
-	$(CXX) $(CXXFLAGS) -o build/OOP1.exe $(CLASS_DIR)/OOP1.cpp $(wildcard $(CLASS_DIR)/lib/*.cpp)
+	$(CXX) $(CXXFLAGS) -o build/OOP2.exe $(CLASS_DIR)/OOP2.cpp $(wildcard $(CLASS_DIR)/lib/*.cpp)
 
 test_time: $(CLASS_DIR)/time_test.cpp $(wildcard $(CLASS_DIR)/lib/*.cpp)
 	if not exist build mkdir build

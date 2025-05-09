@@ -51,7 +51,12 @@ using std::make_move_iterator;
 #include <utility>
 using std::move;
 
-static const char output_file[] = "teksto_failai/rezultatai.txt"; // failo, į kurį išvedami rezultatų duomenys, direktorija/pavadinimas
+#include <filesystem>
+using std::filesystem::path;
+using std::filesystem::exists;
+using std::filesystem::create_directories;
+
+static const char output_file[] = "txt/rezultatai.txt"; // failo, į kurį išvedami rezultatų duomenys, direktorija/pavadinimas
 
 extern bool ar_skaiciuoti_laika;
 extern time_point<high_resolution_clock> pradzios_laikas;
