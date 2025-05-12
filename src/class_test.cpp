@@ -1,9 +1,10 @@
 #define CATCH_CONFIG_MAIN
-#include "lib/catch_amalgamated.hpp"
+#include "include/catch_amalgamated.hpp"
 #include "lib/studentas.h"
 #include "lib/isvedimas.h"
 
-TEST_CASE("Test konstruktoriu", "[studentas]") {
+TEST_CASE("Test konstruktoriu", "[studentas]")
+{
     // Testuojame numatytąjį konstruktorių
     studentas stud_default;
     // Tikimės, kad vardas ir pavardė yra tušti, o skaičiavimai nenustatyti (galutinės reikšmės 0 arba normalios)
@@ -20,7 +21,8 @@ TEST_CASE("Test konstruktoriu", "[studentas]") {
     REQUIRE(stud_param.galutinis_vidurkis() <= 10);
 }
 
-TEST_CASE("Test copy konstruktoriaus", "[studentas]") {
+TEST_CASE("Test copy konstruktoriaus", "[studentas]")
+{
     // Sukuriame originalų objektą
     vector<int> pazymiai = {7, 8, 9};
     studentas originalas("Petras", "Petraitis", pazymiai, 7);
@@ -33,7 +35,8 @@ TEST_CASE("Test copy konstruktoriaus", "[studentas]") {
     REQUIRE(kopija.galutinis_mediana() == originalas.galutinis_mediana());
 }
 
-TEST_CASE("Test copy priskyrimo operatoriaus", "[studentas]") {
+TEST_CASE("Test copy priskyrimo operatoriaus", "[studentas]")
+{
     vector<int> pazymiai = {6, 7, 8};
     studentas originalas("Ona", "Onaitė", pazymiai, 6);
     studentas kopija;
@@ -45,7 +48,8 @@ TEST_CASE("Test copy priskyrimo operatoriaus", "[studentas]") {
     REQUIRE(kopija.galutinis_mediana() == originalas.galutinis_mediana());
 }
 
-TEST_CASE("Test move konstruktoriaus", "[studentas]") {
+TEST_CASE("Test move konstruktoriaus", "[studentas]")
+{
     vector<int> pazymiai = {5, 5, 5};
     studentas originalas("Ieva", "Ievaitė", pazymiai, 5);
     double vidurkis_original = originalas.galutinis_vidurkis();
@@ -57,14 +61,15 @@ TEST_CASE("Test move konstruktoriaus", "[studentas]") {
     REQUIRE(perkelta.pavarde() == "Ievaitė");
     REQUIRE(perkelta.galutinis_vidurkis() == vidurkis_original);
     REQUIRE(perkelta.galutinis_mediana() == mediana_original);
-    // Originalo turinys po move gali būti tuščias ar nulinis pagal implementaciją
+    // Originalo turinys po move tuščias ar nulinis
     REQUIRE(originalas.vardas() == "");
     REQUIRE(originalas.pavarde() == "");
     REQUIRE(originalas.galutinis_vidurkis() == 0);
     REQUIRE(originalas.galutinis_mediana() == 0);
 }
 
-TEST_CASE("Test move priskyrimo operatoriaus", "[studentas]") {
+TEST_CASE("Test move priskyrimo operatoriaus", "[studentas]")
+{
     vector<int> pazymiai = {4, 4, 4};
     studentas originalas("Andrius", "Andraitis", pazymiai, 4);
     double vidurkis_original = originalas.galutinis_vidurkis();
@@ -87,12 +92,32 @@ TEST_CASE("Test move priskyrimo operatoriaus", "[studentas]") {
     REQUIRE(perkelta.galutinis_mediana() == mediana_original);
 }
 
-TEST_CASE("Test destruktoriaus", "[studentas]") {
-    // Testuojama, kad destruktorius veikia be klaidų sunaikinant objektus
+/*
+#ifdef _DEBUG
+#include <crtdbg.h>
+#endif
+
+TEST_CASE("Test destruktoriaus", "[studentas]")
+{
+#ifdef _DEBUG
+    _CrtMemState startState, endState, diffState;
+    _CrtMemCheckpoint(&startState);
+#endif
+
     {
-        studentas stud("Simonas", "Simonaitis", vector<int>{10, 9, 8}, 10);
-        REQUIRE(stud.vardas() == "Simonas");
-        // Objektas bus automatiškai sunaikintas pasibaigus blokui, destruktorius turi tvarkingai išvalyti objektą
+        // Dinamiškai alokuojame ir dealokuojame, kad patikrintume destruktoriaus teisingumą.
+        studentas *stud = new studentas("Simonas", "Simonaitis", vector<int>{10, 9, 8}, 10);
+        REQUIRE(stud->vardas() == "Simonas");
+        delete stud;
     }
-    // Jei destruktorius sukelia problemų, testas bus nesėkmingas
+
+#ifdef _DEBUG
+    _CrtMemCheckpoint(&endState);
+    if (_CrtMemDifference(&diffState, &startState, &endState))
+    {
+        _CrtMemDumpStatistics(&diffState);
+        FAIL("Aptiktas memory leak 'studentas' destruktoriuje.");
+    }
+#endif
 }
+*/

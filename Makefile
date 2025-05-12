@@ -1,8 +1,6 @@
 CXX = g++
-CXXFLAGS = -fdiagnostics-color=always -g -std=c++17 -Os
+CXXFLAGS = -fdiagnostics-color=always -g -O3 -std=c++17 -Iinclude -mconsole
 CLASS_DIR = src
-TEST_SOURCES = src/hello_test.cpp
-TEST_EXECUTABLE = build/hello_test.exe
 
 all: test_time test_class main
 
@@ -17,6 +15,6 @@ test_time: $(CLASS_DIR)/time_test.cpp $(wildcard $(CLASS_DIR)/lib/*.cpp)
 	if not exist build mkdir build
 	$(CXX) $(CXXFLAGS) -o build/time_test.exe $(CLASS_DIR)/time_test.cpp $(wildcard $(CLASS_DIR)/lib/*.cpp)
 
-test_class: $(CLASS_DIR)/class_test.cpp $(wildcard $(CLASS_DIR)/lib/*.cpp)
+test_class: $(CLASS_DIR)/class_test.cpp $(CLASS_DIR)/include/catch_amalgamated.cpp $(wildcard $(CLASS_DIR)/lib/*.cpp)
 	if not exist build mkdir build
-	$(CXX) $(CXXFLAGS) -o build/class_test.exe $(CLASS_DIR)/class_test.cpp $(wildcard $(CLASS_DIR)/lib/*.cpp)
+	$(CXX) $(CXXFLAGS) -o build/class_test.exe $(CLASS_DIR)/class_test.cpp $(CLASS_DIR)/include/catch_amalgamated.cpp $(wildcard $(CLASS_DIR)/lib/*.cpp)
