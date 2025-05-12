@@ -57,7 +57,12 @@ studentas::studentas(studentas &&other) noexcept
       galutinisVid(move(other.galutinisVid)),
       galutinisMed(move(other.galutinisMed))
 {
-    // Removed the explicit call to other.~studentas();
+    other.paz.clear();
+    other.var = "";
+    other.pav = "";
+    other.egz = 0;
+    other.galutinisVid = 0;
+    other.galutinisMed = 0;
 }
 
 studentas &studentas::operator=(const studentas &other)
@@ -86,7 +91,14 @@ studentas &studentas::operator=(studentas &&other) noexcept
     egz = move(other.egz);
     galutinisVid = move(other.galutinisVid);
     galutinisMed = move(other.galutinisMed);
-    // Removed the explicit call to other.~studentas();
+
+    other.paz.clear();
+    other.var = "";
+    other.pav = "";
+    other.egz = 0;
+    other.galutinisVid = 0;
+    other.galutinisMed = 0;
+
     return *this;
 }
 
