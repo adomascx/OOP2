@@ -1,7 +1,7 @@
-#include "bibliotekos/main_lib.h"
-#include "bibliotekos/apdorojimas.h"
-#include "bibliotekos/ivedimas.h"
-#include "bibliotekos/isvedimas.h"
+#include "lib/main_lib.h"
+#include "lib/apdorojimas.h"
+#include "lib/ivedimas.h"
+#include "lib/isvedimas.h"
 
 int main()
 {

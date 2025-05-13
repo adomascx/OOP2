@@ -1,5 +1,5 @@
-#include "bibliotekos/studentas.h"
-#include "bibliotekos/isvedimas.h"
+#include "lib/studentas.h"
+#include "lib/isvedimas.h"
 
 int main(int argc, char *argv[])
 {
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
      // Perkelimo (move) konstruktoriaus testavimas
      studentas studMoveConstructed(move(studParam));
      cout << "Perkelimo konstruktoriaus testas sekmingas: " << studMoveConstructed
-          << "Like duomenys: " << studParam;
+          << "Like duomenys: " << studParam.vardas() << studParam.pavarde() << studParam.galutinis_vidurkis() << endl;
 
      // Kopijavimo priskyrimo (operator=) testavimas
      studentas studCopyAssigned;
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
      studentas studMoveAssigned;
      studMoveAssigned = move(studMoveConstructed);
      cout << "Perkelimo priskyrimo testas sekmingas: " << studMoveAssigned
-          << "Like duomenys: " << "AAAAAAA" << studMoveConstructed << "BBBBBBB";
+          << "Like duomenys: " << studMoveConstructed.vardas() << studMoveConstructed.pavarde() << studMoveConstructed.galutinis_vidurkis() << endl;
 
      // Ivedimo metodu testavimas (naudojant stringstream)
      std::stringstream inputMock("Jonas Jonaitis 2 9 10 7");

@@ -1,5 +1,5 @@
-#include "bibliotekos/main_lib.h"
-#include "bibliotekos/isvedimas.h"
+#include "lib/main_lib.h"
+#include "lib/isvedimas.h"
 
 int main()
 {
