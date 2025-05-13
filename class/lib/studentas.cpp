@@ -53,9 +53,9 @@ studentas::studentas(studentas &&other) noexcept
     : var(move(other.var)),
       pav(move(other.pav)),
       paz(move(other.paz)),
-      egz(other.egz),
-      galutinisVid(other.galutinisVid),
-      galutinisMed(other.galutinisMed) { other.~studentas(); }
+      egz(move(other.egz)),
+      galutinisVid(move(other.galutinisVid)),
+      galutinisMed(move(other.galutinisMed)) { other.~studentas(); }
 
 // copy operatorius
 studentas &studentas::operator=(const studentas &other)
