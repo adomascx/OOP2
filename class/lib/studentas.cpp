@@ -43,7 +43,6 @@ studentas::studentas(const string &vardas, const string &pavarde, const vector<i
 studentas::studentas(istream &is, int nd_count)
 {
     paz_ivedimas(is, nd_count);
-    cout << "A";
     if (!paz.empty())
     {
         calc_gal_vidurkis();
@@ -65,7 +64,15 @@ studentas::studentas(studentas &&other) noexcept
       paz(move(other.paz)),
       egz(move(other.egz)),
       galutinisVid(move(other.galutinisVid)),
-      galutinisMed(move(other.galutinisMed)) { other.~studentas(); }
+      galutinisMed(move(other.galutinisMed))
+{
+    other.paz.clear();
+    other.var = "";
+    other.pav = "";
+    other.egz = 0;
+    other.galutinisVid = 0;
+    other.galutinisMed = 0;
+}
 
 // copy operatorius
 studentas &studentas::operator=(const studentas &other)
@@ -95,7 +102,14 @@ studentas &studentas::operator=(studentas &&other) noexcept
     egz = move(other.egz);
     galutinisVid = move(other.galutinisVid);
     galutinisMed = move(other.galutinisMed);
-    other.~studentas();
+
+    other.paz.clear();
+    other.var = "";
+    other.pav = "";
+    other.egz = 0;
+    other.galutinisVid = 0;
+    other.galutinisMed = 0;
+
     return *this;
 }
 
