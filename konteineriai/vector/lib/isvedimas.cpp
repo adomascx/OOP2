@@ -1,6 +1,6 @@
 #include "isvedimas.h"
 
-void rez_isvedimas(ostream &out, char choice_mediana, const deque<stud_struct> &grupe)
+void rez_isvedimas(ostream &out, char choice_mediana, const vector<stud_struct> &grupe)
 {
     out << setw(15) << left << "Vardas"
         << setw(15) << "Pavarde"
@@ -53,9 +53,9 @@ void failo_generavimas(string gen_file, int paz_sk, int dydis)
     timer_pab("failo generavimas");
 }
 
-void stud_isskirstymas_3(const deque<stud_struct> &grupe)
+void stud_isskirstymas_3(const vector<stud_struct> &grupe)
 {
-    deque<stud_struct> temp = grupe;
+    vector<stud_struct> temp = grupe;
 
     timer_prad();
     sort(temp.begin(), temp.end(), [](const auto &a, const auto &b)
@@ -68,80 +68,32 @@ void stud_isskirstymas_3(const deque<stud_struct> &grupe)
                      { return grupe.galutinisVid < 5; });
 
     // perkeliami duomenys is 'temp' i 'kartotojai'
-    deque<stud_struct> kartotojai(make_move_iterator(i), make_move_iterator(temp.end()));
+    vector<stud_struct> kartotojai(make_move_iterator(i), make_move_iterator(temp.end()));
     temp.erase(i, temp.end());
-    timer_pab("Isdeliojimas i 2 konteinerius");
+    timer_pab("Isdeliojimas i 2 vektorius");
 
-    // timer_prad();
     // 'kartotoju' isvedimas i faila
-    ofstream fr_k("teksto_failai/kartotojai.txt");
+    timer_prad();
+    ofstream fr_k("txt/kartotojai.txt");
     if (!fr_k)
         throw runtime_error("Nepavyko atidaryti kartotoju failo");
 
     rez_isvedimas(fr_k, 'n', kartotojai);
     fr_k.close();
 
-    ofstream fr_i("teksto_failai/islaikytojai.txt");
+    // 'islaikytoju' isvedimas i faila
+    ofstream fr_i("txt/islaikytojai.txt");
     if (!fr_i)
         throw runtime_error("Nepavyko atidaryti islaikytoju failo");
+
     rez_isvedimas(fr_i, 'n', temp);
     fr_i.close();
-    // timer_pab("Isvedimas i faila");
+    timer_pab("Isvedimas i faila");
 }
 
-void stud_isskirstymas_2(const deque<stud_struct> &grupe)
+void stud_isskirstymas_2(const vector<stud_struct> &grupe)
 {
-    deque<stud_struct> temp = grupe;
-
-    timer_prad();
-
-    // visas konteineris rusiuojamas is karto, taip sumazinant velesniu palyginimu sk.
-    sort(temp.begin(), temp.end(), [](const auto &a, const auto &b)
-         { return a.galutinisVid > b.galutinisVid; });
-
-    timer_pab("Studentu rusiavimas");
-
-    timer_prad();
-
-    // originalaus konteinerio indeksas, per kuri perskiriama
-    auto i = find_if(temp.begin(), temp.end(), [](const auto &grupe)
-                     { return grupe.galutinisVid < 5; });
-
-    deque<stud_struct> kartotojai;
-
-    // perkeliami duomenys is 'temp' i 'kartotojai'
-    kartotojai.insert(kartotojai.end(),
-                      make_move_iterator(i),
-                      make_move_iterator(temp.end()));
-
-    timer_pab("Isdeliojimas i 2 vektorius");
-
-    // timer_prad();
-
-    // 'kartotoju' isvedimas i faila
-    ofstream fr_k("teksto_failai/kartotojai.txt");
-    if (!fr_k)
-        throw runtime_error("Nepavyko atidaryti kartotoju failo");
-
-    rez_isvedimas(fr_k, false, kartotojai);
-    fr_k.close();
-
-    // 'islaikytoju' isvedimas i faila
-    ofstream fr_i("teksto_failai/islaikytojai.txt");
-    if (!fr_i)
-        throw runtime_error("Nepavyko atidaryti islaikytoju failo");
-
-    rez_isvedimas(fr_i, false, temp);
-    fr_i.close();
-
-    // timer_pab("Isvedimas i faila");
-}
-
-void stud_isskirstymas_1(const deque<stud_struct> &grupe)
-{
-    deque<stud_struct> temp = grupe;
-    deque<stud_struct> islaikytojai;
-    deque<stud_struct> kartotojai;
+    vector<stud_struct> temp = grupe;
 
     // visas masyvas rusiuojamas is karto, taip sumazinant velesniu palyginimu sk.
     timer_prad();
@@ -151,7 +103,56 @@ void stud_isskirstymas_1(const deque<stud_struct> &grupe)
 
     timer_pab("Studentu rusiavimas");
 
-    // vektoriaus padalinimo i 2 vektorius optimizacija ( O(N^2) -> O(N) )
+    timer_prad();
+
+    // originalaus masyvo indeksas, per kuri perskiriama
+    auto i = find_if(temp.begin(), temp.end(), [](const auto &grupe)
+                     { return grupe.galutinisVid < 5; });
+
+    vector<stud_struct> kartotojai;
+
+    // perkeliami duomenys is 'temp' i 'kartotojai'
+    kartotojai.insert(kartotojai.end(),
+                      make_move_iterator(i),
+                      make_move_iterator(temp.end()));
+    
+    timer_pab("Isdeliojimas i 2 vektorius");
+
+    // timer_prad();
+
+    // 'kartotoju' isvedimas i faila
+    ofstream fr_k("txt/kartotojai.txt");
+    if (!fr_k)
+        throw runtime_error("Nepavyko atidaryti kartotoju failo");
+
+    rez_isvedimas(fr_k, false, kartotojai);
+    fr_k.close();
+
+    // 'islaikytoju' isvedimas i faila
+    ofstream fr_i("txt/islaikytojai.txt");
+    if (!fr_i)
+        throw runtime_error("Nepavyko atidaryti islaikytoju failo");
+
+    rez_isvedimas(fr_i, false, temp);
+    fr_i.close();
+
+    // timer_pab("Isvedimas i faila");
+}
+
+void stud_isskirstymas_1(const vector<stud_struct> &grupe)
+{
+    vector<stud_struct> temp = grupe;
+    vector<stud_struct> islaikytojai;
+    vector<stud_struct> kartotojai;
+
+    // visas masyvas rusiuojamas is karto, taip sumazinant velesniu palyginimu sk.
+    timer_prad();
+
+    sort(temp.begin(), temp.end(), [](const auto &a, const auto &b)
+         { return a.galutinisVid > b.galutinisVid; });
+
+    timer_pab("Studentu rusiavimas");
+
     timer_prad();
 
     // nauja (blogesne) implementacija
@@ -168,7 +169,7 @@ void stud_isskirstymas_1(const deque<stud_struct> &grupe)
     // timer_prad();
 
     // 'kartotoju' isvedimas i faila
-    ofstream fr_k("teksto_failai/kartotojai.txt");
+    ofstream fr_k("txt/kartotojai.txt");
     if (!fr_k)
         throw runtime_error("Nepavyko atidaryti kartotoju failo");
 
@@ -176,7 +177,7 @@ void stud_isskirstymas_1(const deque<stud_struct> &grupe)
     fr_k.close();
 
     // 'islaikytoju' isvedimas i faila
-    ofstream fr_i("teksto_failai/islaikytojai.txt");
+    ofstream fr_i("txt/islaikytojai.txt");
     if (!fr_i)
         throw runtime_error("Nepavyko atidaryti islaikytoju failo");
 

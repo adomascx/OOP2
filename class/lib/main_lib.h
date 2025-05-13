@@ -10,8 +10,8 @@ using std::vector;
 using std::cin;
 using std::cout;
 using std::endl;
-using std::ostream;
 using std::istream;
+using std::ostream;
 
 #include <iomanip>
 using std::fixed;
@@ -20,10 +20,9 @@ using std::setprecision;
 using std::setw;
 
 #include <algorithm>
+using std::find_if;
 using std::nth_element;
 using std::sort;
-using std::find_if;
-using std::partition;
 
 #include <string>
 using std::string;
@@ -31,6 +30,7 @@ using std::to_string;
 
 #include <sstream>
 using std::istringstream;
+using std::stringstream;
 
 #include <fstream>
 using std::ifstream;
@@ -45,30 +45,19 @@ using std::chrono::time_point;
 
 #include <conio.h>
 
-#include <list>
-using std::list;
-
 #include <iterator>
-using std::next;
+using std::make_move_iterator;
 
-static const char output_file[] = "teksto_failai/rezultatai.txt"; // failo, į kurį išvedami rezultatų duomenys, direktorija/pavadinimas
+#include <utility>
+using std::move;
 
-struct stud_struct
-{
-    string var, pav;
-    vector<int> paz;
-    int egz;
-    double galutinisVid;
-    double galutinisMed;
-};
-
-extern list<stud_struct> grupe;
+static const char output_file[] = "txt/rezultatai.txt"; // failo, į kurį išvedami rezultatų duomenys, direktorija/pavadinimas
 
 extern bool ar_skaiciuoti_laika;
 extern time_point<high_resolution_clock> pradzios_laikas;
 
-extern string vardas[];
-extern string pavarde[];
+extern string vardai[];
+extern string pavardes[];
 
 void timer_prad();
 void timer_pab(string operacija);

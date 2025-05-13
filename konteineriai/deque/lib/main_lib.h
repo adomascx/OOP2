@@ -23,6 +23,7 @@ using std::setw;
 using std::nth_element;
 using std::sort;
 using std::find_if;
+using std::partition;
 
 #include <string>
 using std::string;
@@ -44,10 +45,13 @@ using std::chrono::time_point;
 
 #include <conio.h>
 
+#include <deque>
+using std::deque;
+
 #include <iterator>
 using std::make_move_iterator;
 
-static const char output_file[] = "teksto_failai/rezultatai.txt"; // failo, į kurį išvedami rezultatų duomenys, direktorija/pavadinimas
+static const char output_file[] = "txt/rezultatai.txt"; // failo, į kurį išvedami rezultatų duomenys, direktorija/pavadinimas
 
 struct stud_struct
 {
@@ -58,7 +62,7 @@ struct stud_struct
     double galutinisMed;
 };
 
-extern vector<stud_struct> grupe;
+extern deque<stud_struct> grupe;
 
 extern bool ar_skaiciuoti_laika;
 extern time_point<high_resolution_clock> pradzios_laikas;

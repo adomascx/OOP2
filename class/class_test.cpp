@@ -1,5 +1,5 @@
-#include "bibliotekos/studentas.h"
-#include "bibliotekos/isvedimas.h"
+#include "lib/studentas.h"
+#include "lib/isvedimas.h"
 
 int main(int argc, char *argv[])
 {

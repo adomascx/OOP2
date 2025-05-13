@@ -1,7 +1,7 @@
-#include "bibliotekos/main_lib.h"
-#include "bibliotekos/apdorojimas.h"
-#include "bibliotekos/ivedimas.h"
-#include "bibliotekos/isvedimas.h"
+#include "lib/main_lib.h"
+#include "lib/apdorojimas.h"
+#include "lib/ivedimas.h"
+#include "lib/isvedimas.h"
 
 int main()
 {
@@ -32,7 +32,7 @@ int main()
                 throw runtime_error("Netinkamas pazymiu kiekis. Pasirinkite skaiciu nuo 1 iki 2147483647");
 
             // failo pavadinimas formatu "studentai[N].txt"
-            gen_file = "teksto_failai/studentai" + to_string(dydis) + ".txt";
+            gen_file = "txt/studentai" + to_string(dydis) + ".txt";
 
             failo_generavimas(gen_file, paz_sk, dydis);
         }
@@ -144,7 +144,7 @@ int main()
             cin >> input_file;
 
             // atidaryti faila tinkamoje direktorijoje
-            input_file = "teksto_failai/" + input_file;
+            input_file = "txt/" + input_file;
             ifstream fd(input_file);
 
             if (!fd)
